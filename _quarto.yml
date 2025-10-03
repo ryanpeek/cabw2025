@@ -1,6 +1,5 @@
 project:
   type: website
-  output-dir: docs
   resources:
     - images/code-icon.png
 
@@ -53,5 +52,8 @@ format:
     code-copy: true
     code-overflow: wrap
     mainfont: "Atkinson Hyperlegible"
+execute:
+  freeze: auto
+  echo: true
 
 editor: source
