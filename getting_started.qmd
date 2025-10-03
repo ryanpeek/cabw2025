@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-date: "2025-08-12"
+date: "2025-10-03"
 ---
 
 Prior to the workshop check you have the required software and set up any accounts you might need for publishing your dashboard.
