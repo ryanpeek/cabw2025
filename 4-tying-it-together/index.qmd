@@ -1,0 +1,21 @@
+---
+title: "Tying it Together!"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Slides
+
+[View slides in full screen](4-tying-it-together.html)
+
+```{=html}
+<iframe class="slide-deck" src="4-tying-it-together.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+## Exercises
+
+-   R:
+
+    -   Option 1: TBD
+
+    -   Option 2: TBD

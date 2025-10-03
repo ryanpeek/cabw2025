@@ -1,0 +1,59 @@
+---
+title: "Learning R: Workflow vs Wrangling"
+subtitle: "CABW 2025"
+---
+
+## Date + location
+
+🗓 Oct 29, 2025
+
+🕘 1 pm - 5 pm
+
+## Overview
+
+You likely already wrangle, analyze, and report environmental data of all types. Perhaps you use R sometimes, or maybe never before. But certainly you likely do similar tasks over and over, maybe using the same tools (e.g., Excel), or maybe a number of different tools. Are your tools re-usable? Can you reproduce your work efficiently and easily, building on the previous experience?
+
+No matter the answer to these questions, this workshop will try to get through some of the basic principles of data wrangling and summarizing in R, how to re-use these tools, and how to build a reproducible workflow you can use to tackle whatever data challenge gets thrown your way.
+
+We will walk through how to get data into R, how to summarize, join, and plot our data, as well as how to make some basic maps. Finally, we will touch on how to put this into a single report that you can re-use or revise as you see fit.
+
+This course is for you if you:
+
+-   do data analysis in Excel
+-   do anything with spreadsheets and environmental data
+-   use a computer regularly
+-   generate summaries or reports that use environmental data
+-   have used R before
+-   have never used R before
+
+
+## Schedule
+
+| Time          | Activity                                                  |
+|:--------------|:----------------------------------------------------------|
+| 01:00 - 01:15 | [Getting Started](getting_started)                        |
+| 01:15 - 01:50 | [Data Wrangling & Project Workflow](1-data-wrangling/)    |
+| 01:50 - 02:00 | ☕ *Take a break* ☕                                        |
+| 02:00 - 02:50 | [Adventures with Bioassessment Data ](2-bioadventure/)    |
+| 02:50 - 03:00 | 🧠 *Brain break!* 🧠                                      |
+| 03:00 - 03:50 | [Make a Map! 🗺️](3-make-maps/)                            |
+| 03:50 - 04:00 | ☕ *Coffee break* ☕                                        |
+| 04:00 - 04:30 | [Tying it Together 🪢](4-tying-it-together/)              |
+| 04:30 - 05:00 | Q & A 🤨📚                                                |
+
+
+## Instructor
+
+[Ryan Peek](https://ryanpeek.org/) is Senior Environmental Scientist (Specialist) at California Department of Fish and Wildlife and reasearcher with UC Davis. Ryan prefers being outside in flowing water over most any other environment, and has worked in a wide range of environments and subject areas including biodiversity, climate change, drought, environmental monitoring, genomics, hydrology, aquatic ecology, food webs, conservation biology, and especially anything having to do with frogs.
+
+## Website
+
+Website and slides, all built in Quarto with RStudio! Styles, Themes, and Layouts adapted/reused from the excellent posit::conf(2024) [repo](https://github.com/posit-conf-2024), specifically the [Quarto Dashboard Workshop](https://posit-conf-2024.github.io/quarto-dashboards/). Some fantastic resources exist that have been invaluable for learning how to put these types of workshops together, thanks to the open, available, and re-useable approach folks have taken. For [Quarto Live](https://r-wasm.github.io/quarto-live/getting_started/installation.html) / WASM, the excellent [R Primers site by Andrew Heiss](https://r-primers.andrewheiss.com/) was invaluable.
+
+## Content
+
+Content is largely built and adapted from the [CABW 2018 R Training](https://sccwrp.github.io/CABW2018_R_training/), and influenced by the excellent [Carpentries](https://carpentries.org/) workshops and community, [Openscapes resources](https://openscapes.org/resources) (including a [Water Boards specific program](https://cawaterboarddatacenter.github.io/swrcb-openscapes/)), and the [Davis R Users Group](https://d-rug.github.io/) and [R4WRDS course](https://r4wrds.netlify.app/).
+
+Ultimately, everything is and should be open to all for use, reuse, and learning.
+
+

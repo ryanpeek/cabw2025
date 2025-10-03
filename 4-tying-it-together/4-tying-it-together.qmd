@@ -1,0 +1,375 @@
+---
+title: "Tying it Together! 🪢"
+subtitle: "CABW 2025"
+author:   
+  - name: Dr. Ryan Peek
+    affiliations:
+      - name: CDFW
+date: "2025-10-29"
+footer: "[CABW R 2025](https://github.com/ryanpeek/)"
+logo: "../images/rabo-icon.png"
+format:
+  revealjs:
+    theme: ../style/slides.scss
+    slide-number: true
+    chalkboard: true
+---
+
+## Tying it all Together {.smaller}
+
+![](../images/let-me-explain-sum-up.gif){fig-alt="Sum up Princess Bride" fig-align="center"}
+
+## *Wrangling* to **Workflow** 
+
+::: {.incremental}
+ - hopefully we now have an idea how to go from just [**wrangling**]{.orange}...
+ - to [**workflows** using re-useable tools!]{.teal}
+
+:::
+
+
+## {.no-line background-image="../images/data_wrangling_a_horst.png" background-size="contain"}
+
+## {.no-line background-image="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/fc9b748b-db96-4ed4-aa23-f6e0ffc866ee.jpg?h=4b467263e6a3afed47af1a074ede6709" background-size="contain"}
+
+## {.no-line background-image="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/209ee1eb-fd83-4e4c-9bed-82ae43b0f3e9.jpg?h=ee5d5bcd70b903b651cd35f5546e3431" background-size="contain"}
+
+# Tools for Reporting & Storytelling
+
+## Quarto
+
+-   is a (relatively) new, open-source, scientific, and technical publishing system
+-   aims to make the process of creating and collaborating dramatically better
+
+::: {.smaller}
+
+*Subsequent slides are adapted from the [excellent Quarto Dashboard workshop](https://posit-conf-2024.github.io/quarto-dashboards/) by Mine Çetinkaya-Rundel* from posit::conf(2024)
+
+:::
+
+## Quarto ➝ many outputs {background-image="images/quarto-to-docs.png"}
+
+With Quarto you can weave together narrative text and code to produce elegantly formatted output as documents, web pages, blog posts, books, and more...
+
+## Installing Quarto
+
+Best Approach:
+
+ - Go to the [Quarto website and download!](https://quarto.org/docs/get-started/)
+
+## Quarto version
+
+::: callout-tip
+Run the following in your Terminal to find your Quarto version:
+
+``` {.bash filename="Terminal"}
+quarto --version
+```
+:::
+
+# Quarto Documents
+
+## Documents
+
+ - Lots of options `.pdf`, `.html`, `.docx`
+ - Easiest to start with `.html`!
+ - We can embed our code and figures with the text!
+ - Click "`Render`" = AutoMagically make a report!
+
+# Quarto Dashboards
+
+## Dashboards {background-image="images/quarto-to-dashboard.png"}
+
+Since Quarto 1.4!
+
+
+##  {.no-line background-image="images/dashboards/customer-churn.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/dashing-through-snow.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/earthquakes.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/gapminder.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/housing-market.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/labor.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/model-card.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/mynorfolk.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/nfl-injuries.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/retirement.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/shiny-penguins.png" background-size="contain"}
+
+##  {.no-line background-image="images/dashboards/stock-explorer.png" background-size="contain"}
+
+## 🍰 Olympic Games dashboard - R
+
+::: r-box
+🔗 [mine.quarto.pub/olympic-games-r](https://mine.quarto.pub/olympic-games-r/)
+:::
+
+```{=html}
+<iframe src="https://mine.quarto.pub/olympic-games-r/" title = "Olympic Games dashboard" frameborder="1" height="575" width="1200"></iframe>
+```
+
+## Notebook ➝ Dashboard
+
+::: r-box
+``` {.markdown filename="olympicdash-r.qmd" style="overflow-y: hidden" code-line-numbers="|3"}
+---
+title: "Olympic Games"
+format: dashboard
+---
+
+# notebook content goes here...
+```
+:::
+
+
+# Dashboard basics
+
+## Cards {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Dashboards are composed of **cards**.
+
+:::::: r-hstack
+::: {data-id="box1" auto-animate-delay="0" style="background: #72994E; width: 200px; height: 150px; margin: 10px; border: 3px solid #57733D;"}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #F2F2F2; width: 200px; height: 150px; margin: 10px; border: 3px solid #C2C2C4;"}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #419599; width: 200px; height: 150px; margin: 10px; border: 3px solid #297075;"}
+:::
+::::::
+
+## Rows and columns {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Cards are arranged into **rows** and **columns**.
+
+:::::: r-stack
+::: {data-id="box1" auto-animate-delay="0" style="background: #72994E; width: 235px; height: 145px; margin-top: 30px; position: absolute; left: 275px; border: 3px solid #57733D;"}
+:::
+
+::: {data-id="box2" style="background: #F2F2F2; width: 235px; height: 145px; margin-top: 30px; position: absolute; right: 275px; border: 3px solid #C2C2C4;"}
+:::
+
+::: {data-id="box3" style="background: #419599; width: 500px; height: 300px; margin-top: 200px; border: 3px solid #297075;"}
+:::
+::::::
+
+## Layouts {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+**Pages**, **tabsets**, and **sidebars** allow for more advanced layouts.
+
+::::::: r-stack
+::: {data-id="box1" auto-animate-delay="0" style="background: #72994E; width: 235px; height: 145px; margin-top: 30px; position: absolute; left: 275px; border: 3px solid #57733D;"}
+:::
+
+::: {data-id="box2" style="background: #F2F2F2; width: 235px; height: 145px; margin-top: 30px; position: absolute; right: 275px; border: 3px solid #C2C2C4;"}
+:::
+
+::: {data-id="box3" style="background: #419599; width: 500px; height: 300px; margin-top: 200px; border: 3px solid #297075;"}
+:::
+
+::: {data-id="box4" auto-animate-delay="0" style="background: #DFB33E; width: 150px; height: 470px; margin-top: 30px; position: absolute; right: 800px; border: 3px solid #9a771a;"}
+:::
+:::::::
+
+## Step-by-step
+
+Let's make a dashboard, step-by-step
+
+# First dashboard in R
+
+## Step 1: `format: dashboard` {auto-animate="true"}
+
+::: r-box
+``` {.yaml filename="dashboard-r.qmd"}
+---
+title: "My first Quarto dashboard"
+format: dashboard
+---
+```
+:::
+
+## Step 2: Add a card {auto-animate="true"}
+
+::: r-box
+```` {.yaml filename="dashboard-r.qmd" code-line-numbers="|10-13"}
+---
+title: "My first Quarto dashboard"
+format: dashboard
+---
+
+```{{r}}
+library(ggplot2)
+```
+
+```{{r}}
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+```
+````
+:::
+
+## Step 2: Add a card {.smaller auto-animate="true"}
+
+:::::: columns
+:::: {.column width="40%"}
+::: r-box
+```` {.yaml filename="dashboard-r.qmd"}
+---
+title: "My first Quarto dashboard"
+format: dashboard
+---
+
+```{{r}}
+library(ggplot2)
+```
+
+```{{r}}
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+```
+````
+:::
+::::
+
+::: {.column width="60%"}
+![](images/first-dashboard-r-1.png)
+:::
+::::::
+
+## Step 3: Add another card {auto-animate="true"}
+
+::: r-box
+```` {.yaml filename="dashboard-r.qmd" code-line-numbers="|15-18"}
+---
+title: "My first Quarto dashboard"
+format: dashboard
+---
+
+```{{r}}
+library(ggplot2)
+```
+
+```{{r}}
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+```
+
+```{{r}}
+ggplot(mpg, aes(x = drv)) +
+  geom_bar()
+```
+````
+:::
+
+## Step 3: Add another card {.smaller auto-animate="true"}
+
+:::::: columns
+:::: {.column width="40%"}
+::: r-box
+```` {.yaml filename="dashboard-r.qmd"}
+---
+title: "My first Quarto dashboard"
+format: dashboard
+---
+
+```{{r}}
+library(ggplot2)
+```
+
+```{{r}}
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+```
+
+```{{r}}
+ggplot(mpg, aes(x = drv)) +
+  geom_bar()
+```
+````
+:::
+::::
+
+::: {.column width="60%"}
+![](images/first-dashboard-r-2.png)
+:::
+::::::
+
+## Step 4: Add titles to cards {auto-animate="true"}
+
+::: r-box
+```` {.yaml filename="dashboard-r.qmd" code-line-numbers="|11,17"}
+---
+title: "My first Quarto dashboard"
+format: dashboard
+---
+
+```{{r}}
+library(ggplot2)
+```
+
+```{{r}}
+#| title: Highway vs. city mileage
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+```
+
+```{{r}}
+#| title: Drive types
+ggplot(mpg, aes(x = drv)) +
+  geom_bar()
+```
+````
+:::
+
+## Step 4: Add titles to cards {.smaller auto-animate="true"}
+
+:::::: columns
+:::: {.column width="40%"}
+::: r-box
+```` {.yaml filename="dashboard-r.qmd"}
+---
+title: "My first Quarto dashboard"
+format: dashboard
+---
+
+```{{r}}
+library(ggplot2)
+```
+
+```{{r}}
+#| title: Highway vs. city mileage
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+```
+
+```{{r}}
+#| title: Drive types
+ggplot(mpg, aes(x = drv)) +
+  geom_bar()
+```
+````
+:::
+::::
+
+::: {.column width="60%"}
+![](images/first-dashboard-r-3.png)
+:::
+::::::
+
+## Steps 1 - 4 {auto-animate="true"}
+
+![](images/first-dashboard-r-3.png){fig-align="center"}
+
+
+# Your turn
+

@@ -1,0 +1,236 @@
+---
+title: "Getting Started with<br> R in Environmental Science"
+subtitle: "CABW 2025"
+author: "<b>Instructors:</b> <br> Ryan Peek <br> Elena Suglia <br>"
+title-slide-attributes: 
+  data-background-color: white
+  data-background-image: images/azimuth_inset_map_nfamerican.png
+  data-background-size: contain
+  data-background-opacity: '0.5'
+  data-background-position: top
+format:
+  revealjs:
+    link-external-newwindow: true
+    chalkboard: true
+    slide-number: c/t
+    footer: "Click to go back to [Home Site](https://ryanpeek.github.io/cabw2025)"
+    code-copy: true
+    center-title-slide: false
+    code-link: true
+    code-overflow: wrap
+    highlight-style: a11y
+    width: "1600"
+    height: "900"
+    theme: style/slides.scss
+execute: 
+  echo: true
+---
+
+##  {background-color="#213d4f"}
+
+::: section-title-dark
+Workshop Intro
+:::
+
+## Logistics {.content-light}
+
+<br>
+
+🛜 WiFi credentials:
+
+-   Network: `Fill Here`
+
+-   Password: `unknown`
+
+-   Important locations:
+
+    -   **Bathrooms**: fill in
+
+## Code of Conduct {.content-light}
+
+-   Everyone who comes to learn should feel welcome here. We are committed to providing a professional, friendly and safe environment for all participants regardless of gender, sexual orientation, disability, race, ethnicity, religion, national origin or other protected class.
+
+-   Please see a full code of conduct here:
+
+::: {style="text-align: center; font-size: 200%; color: #EE6331"}
+https://d-rug.github.io/code-of-conduct.html
+:::
+
+## Meet the Team!
+
+:::::: {.columns .center}
+::: {.column width="44%"}
+![](images/ryan_snorkel_river.png){.hello-image}
+
+[**Ryan Peek**]{.teal}
+
+[Senior Env. Scientist \@ CDFW]{.smaller}
+:::
+
+::: {.column width="44%"}
+![](http://www.elenasuglia.com/uploads/1/1/0/8/110898395/published/dsc06047.jpg){.hello-image}
+
+[**Elena Suglia**]{.teal}
+
+[Environmental Scientist \@ California State Water Resources Control Board]{.smaller}
+:::
+
+::::::
+
+## Meet your Neighbors!
+
+:::: columns
+::: {.column width="40%"}
+![](images/rabo_hand_on_hips.jpg){height="800px"}
+:::
+
+::: {.column width="40%"}
+
+Please share with the person next to / nearby you…
+
+-   Your name
+-   Your professional affiliation and/or where you're from
+-   What you hope to get out of this workshop
+
+:::
+
+{{< countdown minutes=3 >}}
+
+::::
+
+
+## Workshop materials {.nostretch}
+
+::: {style="text-align: center;"}
+One link for all materials
+
+🔗 [pos.it/quarto-dashboards-24](https://pos.it/quarto-dashboards-24)
+:::
+
+
+## ... and they're all made with? {.center}
+
+::: {.hand-blue-large .fragment}
+Quarto!
+:::
+
+## Agenda
+
+| Time | Activity |
+|:---|:---|
+| 1:00 - 1:50 | Workshop Introduction <br> Data Wrangling & Project Workflow |
+| \~1:50 - 2:00 | *Take a break* ☕ |
+| 2:00 - 2:50 | Adventures with Bioassessment Data (Exploratory analysis) |
+| \~2:50 - 3:00 | *Brain break* 🧠 |
+| 3:00 - 3:50 | Make a Map! 🗺️ |
+| \~3:50 - 4:00 | *Coffee break* ☕ |
+| 4:00 - 4:30 | Tying it Together 🪢 |
+
+## The Sticky Situation
+
+::::::: {.columns .center}
+:::: {.column width="50%"}
+::: {style="background: #F79A37; width: 400px; height: 400px; margin: 50px; box-shadow: 10px 25px 25px -9px darkgray; margin-left: auto; margin-right: auto;rotate: 7deg;"}
+:::
+
+"I'm lost / need help"
+::::
+
+:::: {.column width="50%"}
+::: {style="background: #83D2F3; width: 400px; height: 400px; margin: 50px; box-shadow: 0 25px 25px -9px darkgray; margin-left: auto; margin-right: auto; rotate: -10deg;"}
+:::
+
+"I'm done and ready to move along"
+::::
+
+<br><br>
+
+### 👨‍💻  Put your sticky note on the back of your laptop screen  👩‍💻
+:::::::
+
+## Meeting you where you are
+
+::::::: columns
+:::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+I'll **assume** you
+
+-   have limited or no R knowlege
+
+-   have worked in Microsoft/Google Spreadsheets
+
+-   have written a report on something 
+
+-   want to learn!
+:::
+::::
+
+:::: {.column width="50%"}
+::: {.fragment .fade-in}
+I'll **teach** you
+
+-   basics of a using R
+
+-   how to get *unstuck* 
+
+-   a framework of tools you can reuse!
+:::
+::::
+:::::::
+
+## Workshop approach
+
+We will [**use real bioassessment data**]{.green} to demonstrate some general data approaches to using [**open and reproducible workflows in R**]{.bluedark2} to [**summarizing and plotting data!**]{.burg}.
+
+::: fragment
+<h2><br> Conventions</h2>
+
+|  |  |
+|----|----|
+| 🧰 | Add this to your toolbox. |
+| 📣 | Important announcement typically learned via trial and error...let us save you the pain |
+| {{<  fa arrows-turn-right color=orange >}} | Detour warning. There's a lot more to talk about here but, but there's not time today. |
+
+: {tbl-colwidths="\[5,95\]"}
+:::
+
+## Asking Questions
+
+<br>
+
+:::: fragment
+::: {.absolute style="rotate: -8deg; background: #cca2b2; width: 600px; height: 400px; padding: 40px; box-shadow: 0 20px 20px -11px lightgray; margin-left: auto; margin-right: auto;" top="200" left="800"}
+<h3>[You are always welcome to raise your hand! 🙋]{.bluedark2}</h3>
+:::
+::::
+
+:::: fragment
+::: {.absolute style="rotate: 2deg; background: #A6CFD5; width: 600px; height: 400px; padding: 40px; box-shadow: 0 18px 18px -11px lightgray; margin-left: auto; margin-right: auto;" top="240" left="800"}
+<h3>[Also feel free to ask in our shared doc!]{.bluedark2}</h3>
+:::
+::::
+
+
+## Getting help (R Functions) {.content-light}
+
+Functions are the 🍞 and 🧈 of R programming!
+
+<br>
+
+::: fragment
+If you want to access any function's help page:
+
+``` {.r code-line-numbers="false"}
+# Method 1
+help(function_name_here)
+
+# Method 2
+?function_name_here
+
+# Method 3
+# Highlight the function and press F1 🤯
+```
+:::
+
+##  [Let's get muddy!]{.flwhite .large} {background-image="images/muddy_boots.jpg" background-size="700px" background-color="#213d4f"}
+

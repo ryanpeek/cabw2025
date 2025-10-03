@@ -1,0 +1,43 @@
+---
+title: Bioassessment Data Adventure
+engine: knitr
+format: live-html
+webr:
+  render-df: gt-interactive
+  packages:
+    - dplyr
+    - tidyr
+    - ggplot2
+    - janitor
+  cell-options:
+    editor-font-scale: 0.8
+    fig-width: 7
+    fig-height: 4.3
+    out-width: "100%"
+editor_options: 
+  chunk_output_type: console
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| autorun: true
+123 + 456
+```
+
+```{webr}
+
+csci_url <- "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv"
+cscidat <- read.csv(csci_url)
+str(cscidat)
+
+latlons <- read.csv(file =  "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/latlon.csv")
+
+glimpse(latlons)
+
+names(cscidat)
+cscidat <- clean_names(cscidat)
+names(cscidat)
+
+```
+

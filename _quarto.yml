@@ -1,0 +1,56 @@
+project:
+  type: website
+  resources:
+    - images/code-icon.png
+
+website:
+  page-navigation: true
+  title: "CABW R 2025"
+  description: "Learning R with Bioassessment Data"
+
+  repo-url: https://github.com/ryanpeek/cabw2025
+  repo-actions: [issue]
+
+  open-graph: true
+
+  sidebar:
+    background: "#2F4F4F "
+    logo: "images/peek_swirl.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/ryanpeek/cabw2025
+        text: "GitHub"
+
+    style: docked
+    search: true
+    collapse-level: 2
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: getting_started.qmd
+        text: Getting Started
+      - section: "Modules"
+        contents:
+          - href: 1-data-wrangling/index.qmd
+          - href: 2-bioadventure/index.qmd
+          - href: 3-make-maps/index.qmd
+          - href: 4-tying-it-together/index.qmd
+
+  page-footer:
+    right: "This page is built with 💛 and [Quarto](https://quarto.org/)."
+    left: "&copy; RP"
+    background: "#2F4F4F"
+
+format:
+  html:
+    theme:
+      light: [cosmo]
+    linkcolor: "#589398"
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    mainfont: "Atkinson Hyperlegible"
+
+editor: source

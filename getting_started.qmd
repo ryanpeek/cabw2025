@@ -1,0 +1,37 @@
+---
+title: "Getting Started"
+date: "2025-08-12"
+---
+
+Prior to the workshop check you have the required software and set up any accounts you might need for publishing your dashboard.
+
+## Software
+
+You will be able to follow along with this workshop in R or in Python. See the required software suite for each language below.
+
+### R
+
+-   [R](https://cran.r-project.org)
+
+-   [Quarto](https://quarto.org/docs/download/)
+
+-   [RStudio](https://posit.co/download/rstudio-desktop/)
+
+-   Packages:
+
+```{r}
+#| eval: false
+
+pkg_list <- c(
+  "tidyverse", "gt", "ggthemes", "DT", "here", "paletteer"
+)
+install.packages(pkg_list)
+```
+
+## Getting Started!
+
+[View slides in full screen](slides_getting_started.html)
+
+```{=html}
+<iframe class="slide-deck" src="slides_getting_started.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
