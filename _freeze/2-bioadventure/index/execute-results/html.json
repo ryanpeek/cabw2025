@@ -1,0 +1,15 @@
+{
+  "hash": "f54bde2367e8c14cab86dc394074c5be",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Bioassessment Data Adventure\nengine: knitr\nformat: live-html\nwebr:\n  render-df: gt-interactive\n  packages:\n    - dplyr\n    - tidyr\n    - ggplot2\n    - janitor\n  cell-options:\n    editor-font-scale: 0.8\n    fig-width: 7\n    fig-height: 4.3\n    out-width: \"100%\"\neditor_options: \n  chunk_output_type: console\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell autorun='true'}\n```{webr}\n#| autorun: true\n123 + 456\n```\n:::\n\n::: {.cell}\n```{webr}\n\ncsci_url <- \"https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv\"\ncscidat <- read.csv(csci_url)\nstr(cscidat)\n\nlatlons <- read.csv(file =  \"https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/latlon.csv\")\n\nglimpse(latlons)\n\nnames(cscidat)\ncscidat <- clean_names(cscidat)\nnames(cscidat)\n\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

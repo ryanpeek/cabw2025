@@ -1,0 +1,17 @@
+{
+  "hash": "bd4ea6358fac5d9d53315af544296a7d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Getting Started\"\ndate: \"2025-10-03\"\n---\n\n\n\n\n\n\nIdeally folks will have a chance to run through this prior to the workshop. It is one of the hurdles to getting going, but it gets easier!\n\n## Software\n\nThe software that we will need is as follows. We recommend installing in this order as well. More detailed instructions can be found at each site, and [here](https://r4wrds.netlify.app/intro/m_install_r), (follow Steps 1 & 2).\n\n### R\n\n-   [R](https://cran.r-project.org)\n\n-   [RStudio](https://posit.co/download/rstudio-desktop/)\n\n-   [Quarto](https://quarto.org/docs/download/)\n\n### Packages\n\nThe next step is to install a few packages, which are libraries of functions (more on these later) that we can use to do different things. We install packages available for all R users from an online repository called [CRAN](https://cran.r-project.org/), by pasting the following code into the RStudio Console window and hitting `ENTER`.\n\nFor our purposes we will be using a few packages, let's try to install them now.\n\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# we make a concatenated list of packages\npkg_list <- c(\n  \"tidyverse\", \"janitor\", \"here\", \"sf\", \"tigris\"\n)\n# then install each package in the list\ninstall.packages(pkg_list)\n```\n:::\n\n\n\n\n\n\n## Getting Started!\n\n[View slides in full screen](slides_getting_started.html)\n\n\n\n\n\n\n```{=html}\n<iframe class=\"slide-deck\" src=\"slides_getting_started.html\" height=\"420\" width=\"747\" style=\"border: 1px solid #2e3846;\"></iframe>\n```\n",
+    "supporting": [
+      "getting_started_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

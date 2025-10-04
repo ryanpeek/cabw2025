@@ -2,13 +2,12 @@
 title: Data Wrangling
 engine: knitr
 format: live-html
+toc: true
 webr:
   render-df: gt-interactive
   packages:
     - dplyr
-    - palmerpenguins
     - ggplot2
-    - sf
   cell-options:
     editor-font-scale: 0.8
     fig-width: 7
@@ -20,18 +19,46 @@ editor_options:
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
-```{webr}
-#| autorun: true
-123 + 456
-```
+# Getting Started with Data
+
+There are many ways to learn/teach R, but one of the best ways is to jump right in with some data you can get your hands dirty with. R is an amazing tool, and often there are many ways to do the same thing, however we need to start with data!
+
+## Data Background 
+
+The data set we are going to play with are part of the California Stream Condition Index (CSCI) and the Algal Stream Condition Index (ASCI). These data represent a portion of the sampling sites that were used to develop each index. The CSCI is based on the comparison of the observed assemblage of benthic macroinvertebrate species to those expected from studying reference streams. It provides a scientifically robust way of assessing and describing conditions and tracking conditions over time or in response to regulatory or restoration actions. 
+
+The Index has two components: 
+
+ - Ratio of observed to expected taxanomic groups 
+ - Proportion of the assemblage that falls into different functional groups that represent species diversity, ecosystem function, and sensitivity to stress.
+ 
+The Index is not normalized to a 0 to 1 or 100 scale, but instead compares Index values at test sites to values at comparable reference sites. The mean Index value of reference sites is 1.01. The 90th percentile value is 0.85, thus:
+
+ - streams with values >0.85 are considered to be [**likely intact**]{.green}
+ - streams with values between 0.72 and 0.85 are considered [**likely altered**]{.orange}
+ - streams with values <0.72 are considered [**very likely altered**]{.reddark2}
+
+For more information about these data, and lots of great research showing the utility for monitoring, watershed health, and more, check out [here](https://ftp.sccwrp.org/pub/download/DOCUMENTS/TechnicalReports/883_CSCI-StatewideBioScoringTool.pdf), [here](https://www.waterboards.ca.gov/water_issues/programs/swamp/bioassessment/docs/csci_tech_memo.pdf), [here](https://www.journals.uchicago.edu/doi/10.1086/684130) and [here](https://www.sciencedirect.com/science/article/pii/S1470160X20303587?via%3Dihub).
+
+## Import (Read In) Data
+
+Let's get some data to play with! To start, we'll use a URL of the data set we want to work with, and read it directly from the interwebs into R. It is a `.csv`, which means we can use a `read.csv` function.
 
 ```{webr}
-head(penguins)
 
-ggplot() +
-  geom_point(data=penguins |> filter(!is.na(bill_length_mm)), aes(x=bill_length_mm, y=bill_depth_mm, fill=species), pch=21)+
-  theme_bw()
+# give the full URL to our data (a csv file)
+csci_url <- "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv"
+
+# read in this data and assign it to the name `cscidat`
+cscidat <- read.csv(csci_url)
+
+# take a quick look at the first few rows of data
+head(cscidat)
+
 ```
+
+We have data! Let's try to learn a little more about the kind of data we have. We know it came from a `.csv`, but in R (and programming generally), there are some specific types and forms of data that we should be aware of.
+
 
 ```{webr}
 
@@ -43,21 +70,9 @@ starwars |>
 
 ```{webr}
 
-csci_url <- "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv"
-cscidat <- read.csv(csci_url)
-str(cscidat)
 
 latlons <- read.csv(file =  "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/latlon.csv")
 
 glimpse(latlons)
 ```
 
-```{webr}
-# make sf
-xy_sf <- latlons |> 
-  st_as_sf(coords=c("New_Long", "New_Lat"), crs=4326, remove=FALSE)
-
-xy_sf
-
-plot(xy_sf$geometry)
-```

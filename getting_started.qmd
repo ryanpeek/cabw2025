@@ -3,28 +3,34 @@ title: "Getting Started"
 date: "2025-10-03"
 ---
 
-Prior to the workshop check you have the required software and set up any accounts you might need for publishing your dashboard.
+Ideally folks will have a chance to run through this prior to the workshop. It is one of the hurdles to getting going, but it gets easier!
 
 ## Software
 
-You will be able to follow along with this workshop in R or in Python. See the required software suite for each language below.
+The software that we will need is as follows. We recommend installing in this order as well. More detailed instructions can be found at each site, and [here](https://r4wrds.netlify.app/intro/m_install_r), (follow Steps 1 & 2).
 
 ### R
 
 -   [R](https://cran.r-project.org)
 
--   [Quarto](https://quarto.org/docs/download/)
-
 -   [RStudio](https://posit.co/download/rstudio-desktop/)
 
--   Packages:
+-   [Quarto](https://quarto.org/docs/download/)
+
+### Packages
+
+The next step is to install a few packages, which are libraries of functions (more on these later) that we can use to do different things. We install packages available for all R users from an online repository called [CRAN](https://cran.r-project.org/), by pasting the following code into the RStudio Console window and hitting `ENTER`.
+
+For our purposes we will be using a few packages, let's try to install them now.
 
 ```{r}
 #| eval: false
 
+# we make a concatenated list of packages
 pkg_list <- c(
-  "tidyverse", "gt", "ggthemes", "DT", "here", "paletteer"
+  "tidyverse", "janitor", "here", "sf", "tigris"
 )
+# then install each package in the list
 install.packages(pkg_list)
 ```
 
