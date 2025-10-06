@@ -206,6 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#software" id="toc-software" class="nav-link active" data-scroll-target="#software">Software</a>
   <ul class="collapse">
   <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   </ul></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started!</a></li>
   </ul>
@@ -239,23 +240,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Prior to the workshop check you have the required software and set up any accounts you might need for publishing your dashboard.</p>
+<p>Ideally folks will have a chance to run through this prior to the workshop. It is one of the hurdles to getting going, but it gets easier!</p>
 <section id="software" class="level2">
 <h2 class="anchored" data-anchor-id="software">Software</h2>
-<p>You will be able to follow along with this workshop in R or in Python. See the required software suite for each language below.</p>
+<p>The software that we will need is as follows. We recommend installing in this order as well. More detailed instructions can be found at each site, and <a href="https://r4wrds.netlify.app/intro/m_install_r">here</a>, (follow Steps 1 &amp; 2).</p>
 <section id="r" class="level3">
 <h3 class="anchored" data-anchor-id="r">R</h3>
 <ul>
 <li><p><a href="https://cran.r-project.org">R</a></p></li>
-<li><p><a href="https://quarto.org/docs/download/">Quarto</a></p></li>
 <li><p><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></p></li>
-<li><p>Packages:</p></li>
+<li><p><a href="https://quarto.org/docs/download/">Quarto</a></p></li>
 </ul>
+</section>
+<section id="packages" class="level3">
+<h3 class="anchored" data-anchor-id="packages">Packages</h3>
+<p>The next step is to install a few packages, which are libraries of functions (more on these later) that we can use to do different things. We install packages available for all R users from an online repository called <a href="https://cran.r-project.org/">CRAN</a>, by pasting the following code into the RStudio Console window and hitting <code>ENTER</code>.</p>
+<p>For our purposes we will be using a few packages, let’s try to install them now.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pkg_list <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tidyverse"</span>, <span class="st">"gt"</span>, <span class="st">"ggthemes"</span>, <span class="st">"DT"</span>, <span class="st">"here"</span>, <span class="st">"paletteer"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkg_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we make a concatenated list of packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pkg_list <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tidyverse"</span>, <span class="st">"janitor"</span>, <span class="st">"here"</span>, <span class="st">"sf"</span>, <span class="st">"tigris"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># then install each package in the list</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkg_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
