@@ -29,7 +29,16 @@ The data set we are using is a subset of the California Stream Condition Index (
 
  - Ratio of observed to expected taxanomic groups (`OE`) 
  - Proportion of the assemblage that falls into different functional groups that represent species diversity, ecosystem function, and sensitivity to stress.
- 
+
+::: {.column-margin}
+
+![Drawing of a Caddisfly larvae (Trichoptera: Hydropsychidae), K. Mertz, 2015.](../images/trichop_ecogeo_keiko_mertz.jpg){fig-alt="A drawing of a Caddisfly larvae (Trichoptera: Hydropsychidae), K. Mertz"}
+
+
+
+:::
+
+
 The `CSCI` value is not normalized to a 0 to 1 or 100 scale, but instead compares Index values at test sites to values at comparable reference sites. The mean Index value of reference sites is 1.01. The 90th percentile value is 0.85, thus:
 
  - streams with values >0.85 are considered to be <span style="color:green;">**likely intact**</span>
@@ -43,7 +52,8 @@ For more information about these data, and lots of great research showing the ut
 Let's get some data to play with! To start, we'll use a URL of the data set we want to work with, and read it directly from the interwebs into R. It is a `.csv`, which means we can use a `read.csv` function, which is one of the functions that comes built in to R (*often called `base` R*).
 
 ::: {.callout-tip}
-## Note  📣
+## 📣 Interactive Code!
+
 The code below is interactive, meaning you can type and change different things and then click `Run Code` each time to run `R` right in the browser. This will run **all** the code in the chunk. If you are following along in RStudio, run these commands in the **Console**.
 
 :::
@@ -118,7 +128,7 @@ dbl_var + int_var
 The four types of atomic vectors (think atoms that make up a molecule aka vector) are double (or numeric), integer, logical, and character. Each type has some useful properties and each helps define limits or constraints on the data. Basically, functions in R require a specific types of data, and won't work without them. 
 
 ::: {.callout-tip}
-## Important Note  📣
+## 📣 Common errors
 Play around with these because beyond typing errors, one of the most common issues is data that is of the wrong structure or type. Get to know the basic building blocks!
 :::
 
@@ -138,6 +148,7 @@ head(cscidat)
 
 
 ::: {.callout-caution}
+## 📣 Data frame constraints
 
 In R, the only constraints required to make a data frame are:
 
@@ -177,9 +188,9 @@ library(janitor)
 ```
 
 ::: {.callout-tip}
-## Important Note  📣
+##  📣 Packages
 
-We only need to install packages once per R version, but we need to **`load`** packages every session before we can use them.
+We only need to install packages once per R version, but we need to **load** packages every session before we can use them with the `library()` function.
 
 :::
 
@@ -191,7 +202,7 @@ If everything worked, hopefully we'll see something like below. Don't worry if t
 
 
 ::: {.callout-caution}
-## Important Note  📣
+## 📣 Important Note
 
 If you only take one thing away from today, please make sure it is this: there are many, many options to get help from. Part of learning is sifting through, trying, failing, and trying again. Don't be discouraged if something isn't working, please reach out and leverage your R community!
 
@@ -221,9 +232,19 @@ apropos("print") # Returns all available functions with "print" in the name
 
 While the resources already mentioned are useful, often the quickest way is to just turn to Google (and now LLM).
 
-However, a search for “R” can be challenging and still requires understanding what the question (or error) actually is. A few tips:
+However, searching for “R” answers straight from Google can be challenging and still requires understanding what the question (or error) actually is. A few tips:
 
  - When using search engines, always preface the search with “`r`” or "`[R]`"
  - Get a sense of what sources are reliable
  - Take note of the number of hits and date of a web page
  - When in doubt, search with the exact error message (see [here](https://cran.r-project.org/doc/manuals/R-lang.html#Exception-handling-1) for details about warnings vs errors)
+
+::: {.callout-caution}
+## {{<  fa arrows-turn-right color=orange >}} Using LLMs
+
+Using tools like ChatGPT can be helpful. Some models are better than others for R, but just a strong caution and general bit of advice. 
+
+**Make sure to understand each piece of code that you run when getting suggestions for code from LLMs. Sometimes it will be great, sometimes it will be very wrong, and many times it's a combination of both.**
+
+Learning to program requires repetition, both in success *and* in failure, and understanding why something breaks can be much more informative to learning than knowing something just works.
+:::
