@@ -78,14 +78,14 @@ quarto --version
 
 ## Let's Make One!
 
-**Download and Open [`csci-summary.qmd`]() in RStudio and…**
+**Download and Open [`csci-summary.qmd`](https://github.com/ryanpeek/cabw2025/blob/main/csci-summary.qmd) in RStudio and…**
 
 1. `Render` the document.
 2. Replace the name with your own and re-`render`.
 3. Inspect the parts of the document and change something else or add some new text. Re-`Render`!
 4. Compare with your neighbor and find what they did!
 
-## Making a Document
+## Making a `.Qmd` Document from Scratch
 
 :::: columns
 ::: {.column width="40%"}
@@ -101,7 +101,9 @@ quarto --version
 :::
 ::::
 
-## The `yaml` header (METADATA)
+## Quarto Components: *3 main pieces*
+
+## Part 1: The Metadata (`yaml`) header
 
 ```
 ---
@@ -115,7 +117,25 @@ execute:
 
  - This needs to go at the top of our document
  - It provides info about what format our document will take
- - There are [LOTS of options](https://quarto.org/docs/output-formats/html-basics.html)
+ - Many themes and many [MANY options](https://quarto.org/docs/output-formats/html-basics.html)
+
+## Part 2: The Markdown Text
+
+Markdown is designed to be easy to write and easy to read, and can be saved/published as plain text.
+
+
+> [See Quarto website for more!](https://quarto.org/docs/authoring/markdown-basics.html)
+
+## Part 3: The Code Chunks
+
+Can use multiple languages, just need to:
+
+ - sandwich code between "fences" of at least three backticks. An optional language provides syntax highlighting if available.
+ 
+
+```{{r}}
+library(ggplot2)
+``` 
 
 # Quarto Dashboards
 
