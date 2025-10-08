@@ -76,6 +76,47 @@ quarto --version
  - We can embed our code and figures with the text!
  - Click "`Render`" = AutoMagically make a report!
 
+## Let's Make One!
+
+**Download and Open [`csci-summary.qmd`]() in RStudio and…**
+
+1. `Render` the document.
+2. Replace the name with your own and re-`render`.
+3. Inspect the parts of the document and change something else or add some new text. Re-`Render`!
+4. Compare with your neighbor and find what they did!
+
+## Making a Document
+
+:::: columns
+::: {.column width="40%"}
+1. In RStudio, File > New File > Quarto Document
+2. Add a Title, and keep everything else as a default, then click `Create`!
+3. We can always change things later
+:::
+::: {.column width="10%"}
+:::
+::: {.column width="50%"}
+
+![](../images/new_quarto.png)
+:::
+::::
+
+## The `yaml` header (METADATA)
+
+```
+---
+title: "CSCI Summary"
+format: html
+
+execute: 
+  echo: true
+---
+```
+
+ - This needs to go at the top of our document
+ - It provides info about what format our document will take
+ - There are [LOTS of options](https://quarto.org/docs/output-formats/html-basics.html)
+
 # Quarto Dashboards
 
 ## Dashboards {background-image="images/quarto-to-dashboard.png"}

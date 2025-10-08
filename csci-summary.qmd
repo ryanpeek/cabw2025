@@ -1,0 +1,65 @@
+---
+title: "CSCI Summary"
+author: Tri C. Optera
+format: html
+---
+
+## Data
+
+Let's use the CSCI dataset and provide a couple quick summaries. First we load the libraries we need.
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(gt)
+library(sf)
+
+```
+
+## Load the Data
+
+```{r}
+#| label: import-data
+#| echo: true
+
+# give the full URL to our data (a csv file)
+csci_url <- "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv"
+
+# read in this data and assign it to the name `cscidat`
+cscidat <- read.csv(csci_url)
+
+```
+
+
+## Summaries
+
+Next we add a figure. We can also summarize our total site count and show the distribution of CSCI scores.
+
+```{r}
+#| warning: false
+#| echo: false
+
+ggplot(data=cscidat,
+       aes(y = CSCI)) +
+  geom_histogram() +
+  labs(y = "CSCI") +
+  theme_minimal()
+
+```
+There are `r cscidat |> distinct(StationCode, .keep_all = TRUE) |> nrow()` unique stations in this dataset.
+
+## A Table
+
+The table below shows the first 20 rows in the dataset. How can we show the table but hide the code?
+
+```{r}
+#| label: tbl-csci-top10
+#| tbl-cap: Top 20 CSCI Scores
+
+cscidat |>
+  slice_max(order_by = CSCI, n = 20) |>
+  select(StationCode:COMID, E, OE, CSCI) |> 
+  gt()
+```
