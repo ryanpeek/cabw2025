@@ -14,8 +14,10 @@ editor_options:
 
 ## Exercises
 
--   R:
+-   Making a Quarto Document your own:
 
-    -   Option 1: TBD
+    - Download  [`csci-summary.qmd`](https://github.com/ryanpeek/cabw2025/blob/main/csci-summary.qmd) (click on {{< fa download >}} )
+    - `Render` the document
+    - Change the author to your name and change a color in one of the plots, then re-`Render`!
+    - Add another plot or table, and re-`Render`!
 
-    -   Option 2: TBD
