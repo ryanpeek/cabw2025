@@ -38,17 +38,41 @@ cscidat <- read.csv(csci_url)
 Next we add a figure. We can also summarize our total site count and show the distribution of CSCI scores.
 
 ```{r}
-#| warning: false
+#| label: fig-histogram
+#| fig-cap: "Histogram of values."
 #| echo: false
+#| warning: false
 
 ggplot(data=cscidat,
        aes(y = CSCI)) +
-  geom_histogram() +
+  geom_histogram(bins=20) +
   labs(y = "CSCI") +
   theme_minimal()
 
 ```
 There are `r cscidat |> distinct(StationCode, .keep_all = TRUE) |> nrow()` unique stations in this dataset.
+
+```{r}
+#| echo: false
+#| label: fig-map
+#| fig-cap: "Map of stations."
+#| results: hide
+#| message: false
+
+library(tigris)
+options(tigris_use_cache = TRUE)
+
+ca_cnty <- counties(state="CA")
+ggplot() +
+  geom_sf(data=ca_cnty)+
+  geom_point(data=cscidat,
+             aes(y = New_Lat, x=New_Long), pch=21, fill="orange", alpha=0.4) +
+  labs(title = "Station Locations in CA",
+       x="", y="") +
+  theme_minimal()
+
+```
+
 
 ## A Table
 
