@@ -33,6 +33,10 @@ Generate summary table of stations to monitor
 
 Find counties with fewest stations and identify sampling gaps
 
+## Import our Data
+
+First off we want to import our data so we can use it. For this data adventure, let's import three pieces, the `CSCI` values, the `ASCI` values, and a corresponding latitude & longitude list of our stations. We can then integrate all these pieces.
+
 ```{webr}
 
 csci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/cscidat.csv"
@@ -46,9 +50,138 @@ latlons <- read.csv(file =  "https://raw.githubusercontent.com/ryanpeek/cabw2025
 
 glimpse(latlons)
 
-names(cscidat)
-cscidat <- clean_names(cscidat)
-names(cscidat)
 
+```
+
+## Selecting and Filtering
+
+A big part of working with data is figuring out how to  `select`, `filter`, `slice`,, and `summarize`our data into the pieces we want. The good news is each of these things is a function in the {dplyr} package, so we can walk through a few examples for each of these *verbs*.
+
+### `select`
+
+We `select` columns. There are many options we can use to select the columns we want. Here are a few options, but there are many! Remember, we need to have loaded our `dplyr` package first. 
+
+::: {.callout-tip}
+## 📣 To "Quote" or not to Quote
+
+One difficult thing to be aware of in R is when and where we use quotation marks. For the most part, calling column names in dplyr does **Not* require quoting. However, if we are using specific values, these typically need to be "quoted". Stay tuned for more!
+
+:::
+
+```{webr}
+# first, select some columns
+sel_1 <- select(
+  # first the data
+  .data = cscidat,
+  # next the columns we want
+  SampleID_old, New_Lat, New_Long, CSCI) 
+
+glimpse(sel_1)
+```
+
+Try selecting everything but a few columns. Let's select all *but* `CSCI` and `COMID`
+
+```{webr}
+
+sel_2 <- select(cscidat, -CSCI, -COMID)
+names(sel_2)
+
+# another way to write this is using "c(CSCI, COMID)"
+# however we need to put the "-" in front 
+sel_2 <- select(cscidat, -c(CSCI, COMID))
+
+```
+
+Or we can select a columns that start with `"New"`
+
+```{webr}
+# select columns that start with "New"
+sel_3 <- select(cscidat, starts_with('New'))
+
+# or same sort of thing
+sel_3 <- select(cscidat, contains('New'))
+head(sel_3)
+
+```
+
+### `filter`
+
+We `filter` **rows**. After we select some columns, you’ll probably want to remove observations that don’t fit some criteria. For example, maybe you want to remove CSCI scores less than some threshold, or find stations above a certain latitude, or both.
+
+```{webr}
+
+# get CSCI scores greater than 0.79
+filt_1 <- filter(cscidat, CSCI > 0.79)
+
+summary(filt_1$CSCI)
+
+# get CSCI scores above latitude 37N
+filt_2 <- filter(cscidat, New_Lat > 37)
+summary(filt_2$New_Lat)
+
+```
+
+We can chain these together. In `filter()`, there are many ways to do this, but be aware if we use a `,` to separate different filters, it is treated as **`and`**. So both arguments must be met. For an either / or filter, we'd want to use a vertical bar, `|` separating our arguments.
+
+```{webr}
+
+# get CSCI scores above latitude 37N
+filt_3 <- filter(cscidat, New_Lat > 37, CSCI > 0.79)
+
+select(filt_3, New_Lat, CSCI) |> summary()
+
+```
+
+::: {.callout-tip}
+## 📣 Chaining or Piping (`%>%` or `|>`)
+
+We can chain code together by using a pipe argument (`%>%` or `|>`). These can be viewed as passing whatever is coming from the left side, on to the right side. Think of this as doing an operation on an object, pass to the pipe (`|>`) **and then** doing another operation. 
+
+So, above, we select columns from our filtered dataset, **and then** we summarize those columns.
+
+:::
+
+### `mutate` (adding columns)
+
+Now that we’ve seen how to filter observations and select columns of a data frame, maybe we want to add a new column. In dplyr, mutate allows us to add new columns. These can be vectors you are adding or based on expressions applied to existing columns. For instance, maybe we want to convert a numeric column into a categorical using some criteria or maybe we want to make a new column based on some arithmetic on some other columns.
+
+```{webr}
+
+# get observed taxa
+mut_1 <- mutate(cscidat, observed = OE * E)
+
+glimpse(mut_1)
+
+# add a column for lo/hi csci scores
+mut_2 <- mutate(mut_1, CSCIcat = ifelse(CSCI <= 0.79, 'lo', 'hi'))
+glimpse(mut_2)
+
+```
+
+## Renaming
+
+Can use `janitor` or manual.
+```{webr}
+
+# test 1
+cscidat_lower <- rename(cscidat, 
+              id = SampleID_old, 
+              lat = New_Lat, 
+              lon = New_Long)
+names(cscidat_lower)
+
+# test 2
+cscidat_janitor <- janitor::clean_names(cscidat)
+names(cscidat_janitor)
+
+
+```
+
+
+
+## Joining
+
+```{webr}
+alldat <- inner_join(cscidat, ascidat, by = 'id')
 ```
 
