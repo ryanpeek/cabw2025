@@ -1,7 +1,9 @@
 ---
 title: Bioassessment Data Adventure
 engine: knitr
-format: live-html
+format: 
+  live-html:
+      toc: true
 webr:
   render-df: gt-interactive
   packages:
@@ -10,6 +12,7 @@ webr:
     - ggplot2
     - janitor
   cell-options:
+    min-lines: 6
     editor-font-scale: 0.8
     fig-width: 7
     fig-height: 4.3
@@ -141,9 +144,67 @@ So, above, we select columns from our filtered dataset, **and then** we summariz
 
 :::
 
+### `slice`
+
+`slice` is another function in the `{dplyr}` package, which allows us to do additional filtering of data based on values or summarizing actions. Here we'll use it to find the top ten CSCI values, but it is a powerful function with many uses, and can be easily chained together with other functions like `filter` and `select`.
+
+```{webr}
+
+# get top 10 highest CSCI scores 
+csci_top_10 <- slice_max(cscidat, order_by = CSCI, n = 10)
+
+# now get bottom 10 and select only the Station Code and CSCI score
+csci_bot_10 <- slice_min(cscidat, order_by=CSCI, n=10) |> 
+  select(StationCode, CSCI)
+
+```
+
+::: {.callout-tip}
+
+## 📣 Binding data frames
+Remember, a vector is essentially a *column* of a single type of data. And data frames have to have columns with the same number of rows. So when binding rows, they need to be the same data `class` in each column, and when binding columns, they must have the same number of rows as the data frame. 
+
+:::
+
+
+## Renaming
+
+Often times we need to rename our columns in order to make joining data easier, or for tables and plots that we want to share out. There are a few ways to rename columns in R.
+
+We can use the `dplyr::rename()` function to specifically rename columns of interest. This requires the data, and a list of the columns we are interested in changing, formatted as: `new_name` = `old_name`.
+
+```{webr}
+
+# rename with dplyr
+cscidat_lower <- rename(cscidat, 
+              id = SampleID_old, 
+              lat = New_Lat, 
+              lon = New_Long)
+names(cscidat_lower)
+```
+
+Another great tool is the `{janitor}` package. We can use a number of functions in janitor, but most commonly I use it to clean all the column names. 
+
+```{webr}
+
+# rename all columns with janitor
+cscidat_janitor <- janitor::clean_names(cscidat)
+names(cscidat_janitor)
+
+# take a look at options in the clean_names() function
+# how can we change the case to inital caps?
+# hint: help("clean_names")
+
+```
+
+
+## Modifying and Summarizing Data
+
+When we want to add, revise, or summarize our data, we need to use a few additional functions in `{dplyr}`. We can use these to create new columns, calculate new data based on existing data, or create summaries based on different groups within our data.
+
 ### `mutate` (adding columns)
 
-Now that we’ve seen how to filter observations and select columns of a data frame, maybe we want to add a new column. In dplyr, mutate allows us to add new columns. These can be vectors you are adding or based on expressions applied to existing columns. For instance, maybe we want to convert a numeric column into a categorical using some criteria or maybe we want to make a new column based on some arithmetic on some other columns.
+We’ve seen how to `filter` observations (rows) and `select` columns of a data frame. In `{dplyr}`, `mutate` allows us to add new columns to an existing data frame. These can be vectors you are adding or based on expressions applied to existing columns. For instance, maybe we want to convert a numeric column into a categorical using some criteria or maybe we want to make a new column based on some arithmetic on some other columns.
 
 ```{webr}
 
@@ -158,28 +219,35 @@ glimpse(mut_2)
 
 ```
 
-## Renaming
 
-Can use `janitor` or manual.
+### `bind` Data
+
+Sometimes when we don't need to worry about joining specifically, and we want to append or mash datasets together, we can use the **bind** functions. There are base options as well as `{dplyr}` options. Let's revisit the `slice` function we used above, and make a new dataframe that is just the *StationCode*, *CSCI*, and *Lat* and *Lon* for the top 10 and bottom 10 CSCI values. We can bind rows, or bind columns, depending on what we are trying to do.
+
 ```{webr}
+# get top 10 highest CSCI scores 
+csci_top_10 <- slice_max(cscidat, order_by = CSCI, n = 10) |>   select(StationCode, CSCI, New_Lat, New_Long)
 
-# test 1
-cscidat_lower <- rename(cscidat, 
-              id = SampleID_old, 
-              lat = New_Lat, 
-              lon = New_Long)
-names(cscidat_lower)
+# now get bottom 10
+csci_bot_10 <- slice_min(cscidat, order_by=CSCI, n=10) |> 
+    select(StationCode, CSCI, New_Lat, New_Long)
 
-# test 2
-cscidat_janitor <- janitor::clean_names(cscidat)
-names(cscidat_janitor)
-
+# now BIND!
+csci_top_bottom <- bind_rows(csci_top_10, csci_bot_10)
+csci_top_bottom
 
 ```
 
-
-
 ## Joining
+
+Combining data is a common task of data wrangling. All joins require that each of the tables can be linked by shared identifiers. These are called ‘keys’ and are usually represented as a separate column that acts as a unique variable for the observations. Our example datasets include the id column that represents a unique identifier as a combination of station, sample date, and replicate.
+
+The challenge with joins is that the two datasets may not represent the same observations for a given key. For example, you might have one table with all observations for every key, another with only some observations, or two tables with only a few shared keys. What you get back from a join will depend on what’s shared between tables, in addition to the type of join you use.
+
+For our data, we’ll be using an **`inner_join`** that combines datasets by shared keys (for an overview of the other types of joins, see [R4DS lesson here](https://r4ds.had.co.nz/relational-data.html#mutating-joins).
+
+![Figures by Garrick Adenbuie, see [here for more](https://www.garrickadenbuie.com/project/tidyexplain/)](https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/inner-join.gif)
+
 
 ```{webr}
 alldat <- inner_join(cscidat, ascidat, by = 'id')
