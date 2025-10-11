@@ -20,18 +20,29 @@ editor_options:
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
-```{webr}
-#| autorun: true
-123 + 456
-```
+
+The general approach here can be to join tables (need to update site locations to include the county so as to avoid needing sf and tigris).
+
+Join tables, summarize by county, find county with highest CSCI scores and county with lowest CSCI scores.
+
+Generate a quick box plot comparison by county
+
+Look at trend latitudinally 
+
+Generate summary table of stations to monitor
+
+Find counties with fewest stations and identify sampling gaps
 
 ```{webr}
 
-csci_url <- "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv"
+csci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/cscidat.csv"
 cscidat <- read.csv(csci_url)
 str(cscidat)
 
-latlons <- read.csv(file =  "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/latlon.csv")
+asci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/ascidat.csv"
+ascidat <- read.csv(csci_url)
+
+latlons <- read.csv(file =  "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/latlon.csv")
 
 glimpse(latlons)
 

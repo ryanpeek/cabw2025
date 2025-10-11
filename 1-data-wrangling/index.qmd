@@ -61,7 +61,7 @@ The code below is interactive, meaning you can type and change different things 
 ```{webr}
 
 # give the full URL to our data (a csv file)
-csci_url <- "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv"
+csci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/cscidat.csv"
 
 # read in this data and assign it to the name `cscidat`
 cscidat <- read.csv(csci_url)
@@ -71,7 +71,7 @@ nrow(cscidat)
 
 # try the same with the asci data:
 # give the full URL to our data (a csv file)
-asci_url <- "https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/ascidat.csv"
+asci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/ascidat.csv"
 
 # read it in with read.csv and check nrow
 
