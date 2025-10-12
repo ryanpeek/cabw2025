@@ -40,6 +40,21 @@ Find counties with fewest stations and identify sampling gaps
 
 First off we want to import our data so we can use it. For this data adventure, let's import three pieces, the `CSCI` values, the `ASCI` values, and a corresponding latitude & longitude list of our stations. We can then integrate all these pieces.
 
+::: {.callout-tip}
+
+## 📣 Load Libraries
+If you are following along in your own RStudio Project, make sure to load the libraries first!^[These libraries are loaded automagically behind the scenes in this webpage, which is why we don't load them below.]  
+We will use the following in this tutorial:
+
+```
+library(dplyr)
+library(tidyr)
+library(janitor)
+library(ggplot2)
+```
+:::
+
+
 ```{webr}
 
 csci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/cscidat.csv"
@@ -47,7 +62,8 @@ cscidat <- read.csv(csci_url)
 str(cscidat)
 
 asci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/ascidat.csv"
-ascidat <- read.csv(csci_url)
+ascidat <- read.csv(asci_url)
+glimpse(ascidat)
 
 latlons <- read.csv(file =  "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/latlon.csv")
 
@@ -159,13 +175,6 @@ csci_bot_10 <- slice_min(cscidat, order_by=CSCI, n=10) |>
 
 ```
 
-::: {.callout-tip}
-
-## 📣 Binding data frames
-Remember, a vector is essentially a *column* of a single type of data. And data frames have to have columns with the same number of rows. So when binding rows, they need to be the same data `class` in each column, and when binding columns, they must have the same number of rows as the data frame. 
-
-:::
-
 
 ## Renaming
 
@@ -219,6 +228,30 @@ glimpse(mut_2)
 
 ```
 
+### `summarize` Data
+
+A very powerful verb in the `{dplyr}` package is `summarize`. Note, when we use `mutate`, we get back the same data frame, but with whatever revision or addition we have made to the columns. With `summarize`, we will get a **new dataframe** based on the summary operation we have requested.
+
+The key with `summarize` is there is typically some sort of grouping variable that we want to use to do our summary. For example, maybe we want to get the max and min CSCI score by the stream `COMID` (unique segment ID for every stream line). 
+
+```{webr}
+csci_maxmin_by_comid <- cscidat |> # using pipe here to pass data on
+  group_by(COMID) |> 
+  summarize(maxCSCI = max(CSCI, na.rm=TRUE),
+            minCSCI = min(CSCI, na.rm=TRUE))
+glimpse(csci_maxmin_by_comid)
+
+```
+
+What if we want to know which of these `COMIDs` actually had more than one value to calculate the `min` and `max`? We can use another summarizing shortcut called `tally`. It works the same way as `summarize` but is designed specifically for counting unique values, or getting the sum of those values based on a grouping value. 
+```{webr}
+
+comid_tally <- cscidat |> 
+  group_by(COMID) |> 
+  tally() |> 
+  filter(n>1)
+
+```
 
 ### `bind` Data
 
@@ -236,11 +269,22 @@ csci_bot_10 <- slice_min(cscidat, order_by=CSCI, n=10) |>
 csci_top_bottom <- bind_rows(csci_top_10, csci_bot_10)
 csci_top_bottom
 
+# if we had different columns in each 
+# data frame, what would happen with our bind?
+
 ```
+
+::: {.callout-tip}
+
+## 📣 Binding data frames
+Remember, a vector is essentially a *column* of a single type of data. And data frames have to have columns with the same number of rows. So when binding rows, they need to be the same data `class` in each column, and when binding columns, they must have the same number of rows as the data frame. 
+
+:::
+
 
 ## Joining
 
-Combining data is a common task of data wrangling. All joins require that each of the tables can be linked by shared identifiers. These are called ‘keys’ and are usually represented as a separate column that acts as a unique variable for the observations. Our example datasets include the id column that represents a unique identifier as a combination of station, sample date, and replicate.
+Combining data is a common task of data wrangling. All joins require that each of the tables can be linked by some shared identifier or **_key_** columns. These are usually represented as columns that are unique for each observations. Our example datasets include the `StationID` or `SampleID` columns that represent unique identifiers of the station, sample date, and/or replicate.
 
 The challenge with joins is that the two datasets may not represent the same observations for a given key. For example, you might have one table with all observations for every key, another with only some observations, or two tables with only a few shared keys. What you get back from a join will depend on what’s shared between tables, in addition to the type of join you use.
 
@@ -248,8 +292,49 @@ For our data, we’ll be using an **`inner_join`** that combines datasets by sha
 
 ![Figures by Garrick Adenbuie, see [here for more](https://www.garrickadenbuie.com/project/tidyexplain/)](https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/inner-join.gif)
 
+We need to either rename the **key** columns of interest so they are identical, or we can specify them explicitly when joining. Let's show both options below:
 
 ```{webr}
-alldat <- inner_join(cscidat, ascidat, by = 'id')
+
+## OPTION 1: CHANGE COLUMNS TO THE SAME "KEY" NAME ------
+
+# rename to "id" so cscidat matches ascidat
+csci_renamed <- rename(cscidat, id = SampleID_old)
+
+# join
+all_data <- inner_join(csci_renamed, ascidat, by = 'id')
+glimpse(all_data) # note how many rows and columns
+# we expect to have added any matching rows from ascidat
+
+## OPTION 2: SPECIFY THE KEY COLUMNS FOR EACH IN JOIN
+
+all_data <- inner_join(cscidat, ascidat, by=c("SampleID_old"="id"))
+glimpse(all_data)
+
 ```
 
+Let's look at these two approaches above, break down the differences, and talk about what happened. Joins are particularly important, but can be difficult to deal with.
+
+We could join by multiple columns, so if we wanted to join by `id` and the `New_Lat` and `New_Long` fields, we could say `by=c("SampleID_old"="id", "New_Lat", "New_Long")`. 
+Note, for columns with the exact same name, we don't need the `=` to define for each dataset. 
+
+It is always important to bear in mind what type of join we are using, understand and inspect the results, and check that against expectations of what we think we should get back. The computer will only do what we tell it, for better or worse!
+
+## Plotting with `ggplot2`
+
+The entire workflow of data exploration is enhanced through looking at your data, whether you’re exploring a dataset for the first time or creating publication-ready figures. Viewing your data provides insight into patterns that can help you explore different hypotheses. No analysis is complete without a solid graphic.
+
+We’ll only introduce some of the core concepts behind the popular ggplot2 package. This package follows a strict philosophy known as the grammar of graphics that was designed to make thinking, reasoning, and communicating about graphs easier by following a few simple rules. Like building a sentence in speech (aka grammar), all graphs start with a foundational component that is used for building other graph pieces.
+
+With ggplot2, you begin a plot with the function ggplot(). ggplot() creates a coordinate system that you can add layers to. The first argument of ggplot() is the dataset to use in the graph. So ggplot(data = alldat) creates an empty base graph.
+
+ggplot(data = alldat)
+You complete your graph by adding one or more layers (aka geoms) to ggplot(). The function geom_point() adds a layer of points to your plot, which creates a scatterplot. Ggplot2 comes with many geom functions that each add a different type of layer to a plot.
+
+```{webr}
+
+
+ggplot(data = alldat) +
+  geom_point()
+
+```
