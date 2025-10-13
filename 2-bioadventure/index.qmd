@@ -12,7 +12,7 @@ webr:
     - ggplot2
     - janitor
   cell-options:
-    min-lines: 6
+    min-lines: 3
     editor-font-scale: 0.8
     fig-width: 7
     fig-height: 4.3
@@ -56,19 +56,19 @@ library(ggplot2)
 
 
 ```{webr}
-
+# Benthic Macroinvertebrate Data
 csci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/cscidat.csv"
 cscidat <- read.csv(csci_url)
 str(cscidat)
 
+# Algae Data
 asci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/ascidat.csv"
 ascidat <- read.csv(asci_url)
 glimpse(ascidat)
 
+# Site Location Data
 latlons <- read.csv(file =  "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/latlon.csv")
-
 glimpse(latlons)
-
 
 ```
 
@@ -101,14 +101,12 @@ glimpse(sel_1)
 Try selecting everything but a few columns. Let's select all *but* `CSCI` and `COMID`
 
 ```{webr}
-
 sel_2 <- select(cscidat, -CSCI, -COMID)
 names(sel_2)
 
 # another way to write this is using "c(CSCI, COMID)"
 # however we need to put the "-" in front 
 sel_2 <- select(cscidat, -c(CSCI, COMID))
-
 ```
 
 Or we can select a columns that start with `"New"`
@@ -120,7 +118,6 @@ sel_3 <- select(cscidat, starts_with('New'))
 # or same sort of thing
 sel_3 <- select(cscidat, contains('New'))
 head(sel_3)
-
 ```
 
 ### `filter`
@@ -128,27 +125,23 @@ head(sel_3)
 We `filter` **rows**. After we select some columns, you’ll probably want to remove observations that don’t fit some criteria. For example, maybe you want to remove CSCI scores less than some threshold, or find stations above a certain latitude, or both.
 
 ```{webr}
-
 # get CSCI scores greater than 0.79
 filt_1 <- filter(cscidat, CSCI > 0.79)
-
-summary(filt_1$CSCI)
+summary(filt_1$CSCI) # get summary of single column with `$`
 
 # get CSCI scores above latitude 37N
 filt_2 <- filter(cscidat, New_Lat > 37)
 summary(filt_2$New_Lat)
-
 ```
 
 We can chain these together. In `filter()`, there are many ways to do this, but be aware if we use a `,` to separate different filters, it is treated as **`and`**. So both arguments must be met. For an either / or filter, we'd want to use a vertical bar, `|` separating our arguments.
 
 ```{webr}
-
 # get CSCI scores above latitude 37N
 filt_3 <- filter(cscidat, New_Lat > 37, CSCI > 0.79)
 
+# check with summary
 select(filt_3, New_Lat, CSCI) |> summary()
-
 ```
 
 ::: {.callout-tip}
@@ -165,14 +158,12 @@ So, above, we select columns from our filtered dataset, **and then** we summariz
 `slice` is another function in the `{dplyr}` package, which allows us to do additional filtering of data based on values or summarizing actions. Here we'll use it to find the top ten CSCI values, but it is a powerful function with many uses, and can be easily chained together with other functions like `filter` and `select`.
 
 ```{webr}
-
 # get top 10 highest CSCI scores 
 csci_top_10 <- slice_max(cscidat, order_by = CSCI, n = 10)
 
 # now get bottom 10 and select only the Station Code and CSCI score
 csci_bot_10 <- slice_min(cscidat, order_by=CSCI, n=10) |> 
   select(StationCode, CSCI)
-
 ```
 
 
@@ -183,7 +174,6 @@ Often times we need to rename our columns in order to make joining data easier, 
 We can use the `dplyr::rename()` function to specifically rename columns of interest. This requires the data, and a list of the columns we are interested in changing, formatted as: `new_name` = `old_name`.
 
 ```{webr}
-
 # rename with dplyr
 cscidat_lower <- rename(cscidat, 
               id = SampleID_old, 
@@ -195,7 +185,6 @@ names(cscidat_lower)
 Another great tool is the `{janitor}` package. We can use a number of functions in janitor, but most commonly I use it to clean all the column names. 
 
 ```{webr}
-
 # rename all columns with janitor
 cscidat_janitor <- janitor::clean_names(cscidat)
 names(cscidat_janitor)
@@ -203,7 +192,6 @@ names(cscidat_janitor)
 # take a look at options in the clean_names() function
 # how can we change the case to inital caps?
 # hint: help("clean_names")
-
 ```
 
 
@@ -216,16 +204,13 @@ When we want to add, revise, or summarize our data, we need to use a few additio
 We’ve seen how to `filter` observations (rows) and `select` columns of a data frame. In `{dplyr}`, `mutate` allows us to add new columns to an existing data frame. These can be vectors you are adding or based on expressions applied to existing columns. For instance, maybe we want to convert a numeric column into a categorical using some criteria or maybe we want to make a new column based on some arithmetic on some other columns.
 
 ```{webr}
-
 # get observed taxa
 mut_1 <- mutate(cscidat, observed = OE * E)
-
 glimpse(mut_1)
 
 # add a column for lo/hi csci scores
 mut_2 <- mutate(mut_1, CSCIcat = ifelse(CSCI <= 0.79, 'lo', 'hi'))
 glimpse(mut_2)
-
 ```
 
 ### `summarize` Data
@@ -236,21 +221,24 @@ The key with `summarize` is there is typically some sort of grouping variable th
 
 ```{webr}
 csci_maxmin_by_comid <- cscidat |> # using pipe here to pass data on
+  # pick the variable to group/summarize by
   group_by(COMID) |> 
   summarize(maxCSCI = max(CSCI, na.rm=TRUE),
             minCSCI = min(CSCI, na.rm=TRUE))
 glimpse(csci_maxmin_by_comid)
-
 ```
 
-What if we want to know which of these `COMIDs` actually had more than one value to calculate the `min` and `max`? We can use another summarizing shortcut called `tally`. It works the same way as `summarize` but is designed specifically for counting unique values, or getting the sum of those values based on a grouping value. 
-```{webr}
+What if we want to know which of these `COMIDs` actually had more than one value to calculate the `min` and `max`? We can use another summarizing shortcut called `tally`. It works the same way as `summarize` but is designed specifically for counting unique values, or getting the sum of those values based on a grouping value.
 
+We can combine this with `arrange` to sort our data by a column of interest, and `desc` to sort in descending order.
+
+```{webr}
 comid_tally <- cscidat |> 
   group_by(COMID) |> 
-  tally() |> 
-  filter(n>1)
-
+  tally() |>  # sum how many unique COMID
+  filter(n>1) |> # tally generates a column "n" we can use
+  arrange(desc(n)) # sort "n" from largest to smallest
+head(comid_tally)
 ```
 
 ### `bind` Data
@@ -271,7 +259,6 @@ csci_top_bottom
 
 # if we had different columns in each 
 # data frame, what would happen with our bind?
-
 ```
 
 ::: {.callout-tip}
@@ -295,9 +282,7 @@ For our data, we’ll be using an **`inner_join`** that combines datasets by sha
 We need to either rename the **key** columns of interest so they are identical, or we can specify them explicitly when joining. Let's show both options below:
 
 ```{webr}
-
-## OPTION 1: CHANGE COLUMNS TO THE SAME "KEY" NAME ------
-
+## OPTION 1: CHANGE COLUMNS TO THE SAME "KEY" NAME
 # rename to "id" so cscidat matches ascidat
 csci_renamed <- rename(cscidat, id = SampleID_old)
 
@@ -307,10 +292,10 @@ glimpse(all_data) # note how many rows and columns
 # we expect to have added any matching rows from ascidat
 
 ## OPTION 2: SPECIFY THE KEY COLUMNS FOR EACH IN JOIN
-
 all_data <- inner_join(cscidat, ascidat, by=c("SampleID_old"="id"))
 glimpse(all_data)
 
+# try summary of all_data
 ```
 
 Let's look at these two approaches above, break down the differences, and talk about what happened. Joins are particularly important, but can be difficult to deal with.
@@ -320,21 +305,103 @@ Note, for columns with the exact same name, we don't need the `=` to define for 
 
 It is always important to bear in mind what type of join we are using, understand and inspect the results, and check that against expectations of what we think we should get back. The computer will only do what we tell it, for better or worse!
 
-## Plotting with `ggplot2`
+## Plotting with [`ggplot2`](https://ggplot2.tidyverse.org/)
 
-The entire workflow of data exploration is enhanced through looking at your data, whether you’re exploring a dataset for the first time or creating publication-ready figures. Viewing your data provides insight into patterns that can help you explore different hypotheses. No analysis is complete without a solid graphic.
+The entire workflow of data exploration often hinges on looking at your data, whether you’re exploring a dataset for the first time or creating publication-ready figures. Visualizing your data is important to provide insight into patterns, and opens the door to asking different questions.
 
-We’ll only introduce some of the core concepts behind the popular ggplot2 package. This package follows a strict philosophy known as the grammar of graphics that was designed to make thinking, reasoning, and communicating about graphs easier by following a few simple rules. Like building a sentence in speech (aka grammar), all graphs start with a foundational component that is used for building other graph pieces.
+R is an amazing system for visualizing data, and we can only scratch the surface! We will introduce some of the core concepts and structure of the popular {`ggplot2`} package. Based on what is known as the **g**rammar of **g**raphics, designed to make thinking, reasoning, and communicating about graphs easier by following a few simple rules. Like learning to write a sentence, the grammar of building a graph also must start with a standardized foundation that can be used for building more complex visualizations.
 
-With ggplot2, you begin a plot with the function ggplot(). ggplot() creates a coordinate system that you can add layers to. The first argument of ggplot() is the dataset to use in the graph. So ggplot(data = alldat) creates an empty base graph.
+### `ggplot()`
 
-ggplot(data = alldat)
-You complete your graph by adding one or more layers (aka geoms) to ggplot(). The function geom_point() adds a layer of points to your plot, which creates a scatterplot. Ggplot2 comes with many geom functions that each add a different type of layer to a plot.
+The nice thing is that with {`ggplot2`}, everything begins with the function `ggplot()`. Then we can add layers to this foundation. The first argument of `ggplot()` is the dataset to use in the graph. So this creates an empty plot:
 
 ```{webr}
 
-
-ggplot(data = alldat) +
-  geom_point()
+ggplot(data = all_data)
 
 ```
+
+### [`geoms`](https://ggplot2.tidyverse.org/reference/index.html#geoms)
+
+Once we have added the foundation, we then can build the figure we want, layer by layer. These are typically `geoms` or geometries that correspond with a type of visualization. For example, the function `geom_point()` adds a layer of points to your plot, which creates a scatterplot. {`ggplot2`} comes with **_many_** [`geom`](https://ggplot2.tidyverse.org/reference/index.html#geoms) functions that each add a different type of layer to a plot. 
+
+**One important difference to be aware of, layers in `ggplot` are added using a `+`, not a pipe!**
+
+### `geom` arguments
+
+Every `geom_` function in {`ggplot2`} takes these important components.
+
+ - **data**: This can be specified in the foundation `ggplot()` call, or in individual `geom_` layers. By default, `{ggplot2}` looks for the mapped variable in the `ggplot(data=)` argument, which in our case, comes from `all_data`.
+ - **mapping** arguments. These define the aesthetics of the layer, and specify how variables in your dataset are mapped to visual properties. 
+    - `aes()`: The aesthetic function, which is where we typically always specify the `x=` and `y=` arguments to map variables to the x and y axes. 
+
+Here's the core unit of every `ggplot`:
+
+```
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+And here's what it actually looks like in practice:
+
+```{webr}
+# build the foundation
+ggplot(data = all_data) +
+    # add a geometry
+    geom_point( aes(x=CSCI, y=ASCI) )
+```
+
+::: {.callout-tip}
+
+## 📣 Specifying Argument Names
+You may notice sometimes we drop the function argument names (`geom_point(aes())` instead of `geom_point(mapping=aes())`). Functions will usually work without the argument name, assuming we put the values in the same order that the function expects. *However*, in some cases it is important to be specific. Specifying the `data=` argument is often important in `ggplot`. You'll get a sense of when and where we can drop those argument names as you play with plotting!
+:::
+
+### A `geom_boxplot`
+
+Let's make one final plot to practice, and get a sense of the data. Let's make a boxplot by the different stream types. You'll notice an `NA` category. How can we `filter` out the `NA`s from the data and remake the plot?
+
+:::: {.panel-tabset}
+
+## Challenge
+
+```{webr}
+#| setup: true
+#| exercise: ex_1
+library(ggplot2)
+```
+
+```{webr}
+#| exercise: ex_1
+ggplot(data = all_data |> _____ ) +
+  geom_boxplot(mapping = aes(x = site_type, y = CSCI)) 
+```
+
+## Hints
+
+::: { .hint exercise="ex_1"}
+Consider piping the `filter()` function from `dplyr`. 
+We can then try the negate (`!`) with `is.na()` for `CSCI` and `site_type`.
+
+```r
+|> filter(!is.na( _____ )) +
+```
+:::
+
+## Solution
+
+::: { .solution exercise="ex_1" }
+Use the `filter()` function from `dplyr`:
+
+```r
+ggplot(data = all_data |> #<1>
+filter(!is.na(site_type), !is.na(CSCI))) + #<2>
+  geom_boxplot(mapping = aes(x = site_type, y = CSCI)) #<3>
+
+```
+1. Take `all_data` while in `ggplot()`, and then,
+2. Filter out NA from `site_type` and `CSCI` and make sure to close the `ggplot()`
+3. Add the `geom_boxplot()`
+:::
+
+::::
