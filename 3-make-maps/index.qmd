@@ -8,6 +8,8 @@ webr:
     - dplyr
     - ggplot2
     - sf
+    - mapview
+    - tigris
   cell-options:
     editor-font-scale: 0.8
     fig-width: 7
@@ -19,24 +21,122 @@ editor_options:
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
+## Load Libraries
+
+We will use the following in this tutorial:
+
+```
+library(dplyr)
+library(sf)
+library(mapview)
+library(tigris)
+library(ggplot2)
+```
+
+
+
+## Import the Data
+
 
 ```{webr}
-
+# Benthic Macroinvertebrate Data
 csci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/cscidat.csv"
 cscidat <- read.csv(csci_url)
-str(cscidat)
 
+# Algae Data
+asci_url <- "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/ascidat.csv"
+ascidat <- read.csv(asci_url)
+
+# Site Location Data
 latlons <- read.csv(file =  "https://raw.githubusercontent.com/ryanpeek/cabw2025/refs/heads/main/data/latlon.csv")
-
 glimpse(latlons)
+
 ```
+
+
+## Make Data Spatial
+
+### Projections/Transformations
+
+Spatial data is tricky, because different parts of the world work in different “datum” or “projections”. The best description of how these work is thinking about draping a square tablecloth over a round ball (earth). The tablecloth isn’t quite big enough to cover the whole globe, so near the edges of the tablecoth there’s stretching. At the center of the tablecloth there’s very little stretching. When working with spatial data, we want a projection that is going to give us the least amount of stretching for the location/region we’re working in. 
+
+A few common projections used in California for state/federal work:
+
+ - [NAD83 California Albers: EPSG 3310](https://epsg.io/3310)
+ - [NAD83 California Teal Albers Equal Area: EPSG 102600](https://epsg.io/102600)
+ - [WGS84 Lat Lon: EPSG 4326](https://epsg.io/4326)
+ 
+
+### Convert to [`{sf}`](https://r-spatial.github.io/sf/)
+
+To leverage all the spatial power R provides, we will use the `{sf}` package, which provides a full suite of functionality for spatial analysis of **vector** data. We need to use `st_as_sf()` to convert our dataframe to a simple feature (spatial) object. As part of that we need to specify the coordinate reference system (`crs=`) and `coords` columns.
+
+If all goes well, we should end up with a new `geometry` column, which contains our projected spatial data in a single column. This applies to point, line, or polygon data, there will always be **one** `geometry` column with the spatial information. And it will *stick* with the data!
 
 ```{webr}
 # make sf
 xy_sf <- latlons |> 
-  st_as_sf(coords=c("New_Long", "New_Lat"), crs=4326, remove=FALSE)
+  st_as_sf(
+    coords=c("New_Long", "New_Lat"), # coordinate columns
+    crs=4326, # the coordinate ref system
+    remove=FALSE) # don't remove the original lat/lon columns
 
-xy_sf
+# look at the object
+head(xy_sf)
 
+```
+
+
+::: {.callout-tip}
+## 📣 Raster Data
+
+We simply don't have time to cover all the things, but if you work with raster data, the best recommended all-in-one package to use is [`{terra}`](https://rspatial.github.io/terra/).
+
+:::
+
+## Simple Map
+
+We can start by using the `plot()` function. Here we are actually using a modified `plot()` function from the `{sf}` package, to handle the spatial data.
+
+```{webr}
+#| autorun: false
+#| label: "First Plot"
 plot(xy_sf$geometry)
 ```
+
+
+## Interactive Maps
+
+Another amazing tool to add to the repertoire is the `{mapview}` package. It's very easy to use, and is a great option for exploring your data.
+
+```{webr}
+mapview(xy_sf)
+
+# hint, try with the argument zcol="NAME"
+```
+
+## Getting Boundaries
+
+Many packages available, we will use {`tigris`}.
+
+```{webr}
+# get counties in CA
+ca_cnty <- counties(state="CA")
+```
+
+
+
+## `ggplot` Maps
+
+
+```{webr}
+
+nicemap<-
+  ggplot() + # set up the framework
+  geom_sf(data = ca_cnty, color="gray20", lwd=0.2) + # add the state outline using geom_sf
+  geom_sf(data=xy_sf, fill="orange", pch=21, alpha=0.7, size=2)+
+  labs(x="Longitude (WGS84)", y="Latitude", title="Map of Points") + 
+  theme_minimal() # check out the many themes in ggplot!
+nicemap
+```
+
