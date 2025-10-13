@@ -1,229 +1,195 @@
 [
   {
-    "objectID": "slides_getting_started.html#section",
-    "href": "slides_getting_started.html#section",
-    "title": "Getting Started with R in Environmental Science",
+    "objectID": "csci-summary.html",
+    "href": "csci-summary.html",
+    "title": "CSCI Summary",
     "section": "",
-    "text": "Workshop Intro"
+    "text": "Let’s use the CSCI dataset and provide a couple quick summaries. First we load the libraries we need.\n\nlibrary(tidyverse)\nlibrary(gt)\nlibrary(sf)"
   },
   {
-    "objectID": "slides_getting_started.html#logistics",
-    "href": "slides_getting_started.html#logistics",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Logistics",
-    "text": "Logistics\n\n🛜 WiFi credentials:\n\nNetwork: Fill Here\nPassword: unknown\nImportant locations:\n\nBathrooms: fill in"
-  },
-  {
-    "objectID": "slides_getting_started.html#code-of-conduct",
-    "href": "slides_getting_started.html#code-of-conduct",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\n\nEveryone who comes to learn should feel welcome here. We are committed to providing a professional, friendly and safe environment for all participants regardless of gender, sexual orientation, disability, race, ethnicity, religion, national origin or other protected class.\nPlease see a full code of conduct here:\n\n\nhttps://d-rug.github.io/code-of-conduct.html"
-  },
-  {
-    "objectID": "slides_getting_started.html#meet-the-team",
-    "href": "slides_getting_started.html#meet-the-team",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Meet the Team!",
-    "text": "Meet the Team!\n\n\n\nRyan Peek\nSenior Env. Scientist @ CDFW\n\n\nElena Suglia\nEnvironmental Scientist @ California State Water Resources Control Board"
-  },
-  {
-    "objectID": "slides_getting_started.html#meet-your-neighbors",
-    "href": "slides_getting_started.html#meet-your-neighbors",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Meet your Neighbors!",
-    "text": "Meet your Neighbors!\n\n\n\n\nPlease share with the person next to / nearby you…\n\nYour name\nYour professional affiliation and/or where you’re from\nWhat you hope to get out of this workshop\n\n\n  \n    −\n    +\n \n 03:00"
-  },
-  {
-    "objectID": "slides_getting_started.html#workshop-materials",
-    "href": "slides_getting_started.html#workshop-materials",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Workshop materials",
-    "text": "Workshop materials\n\nOne link for all materials\n🔗 pos.it/quarto-dashboards-24"
-  },
-  {
-    "objectID": "slides_getting_started.html#and-theyre-all-made-with",
-    "href": "slides_getting_started.html#and-theyre-all-made-with",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "… and they’re all made with?",
-    "text": "… and they’re all made with?\n\nQuarto!"
-  },
-  {
-    "objectID": "slides_getting_started.html#agenda",
-    "href": "slides_getting_started.html#agenda",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Agenda",
-    "text": "Agenda\n\n\n\n\n\n\n\nTime\nActivity\n\n\n\n\n1:00 - 1:50\nWorkshop Introduction  Data Wrangling & Project Workflow\n\n\n~1:50 - 2:00\nTake a break ☕\n\n\n2:00 - 2:50\nAdventures with Bioassessment Data (Exploratory analysis)\n\n\n~2:50 - 3:00\nBrain break 🧠\n\n\n3:00 - 3:50\nMake a Map! 🗺️\n\n\n~3:50 - 4:00\nCoffee break ☕\n\n\n4:00 - 4:30\nTying it Together 🪢"
-  },
-  {
-    "objectID": "slides_getting_started.html#the-sticky-situation",
-    "href": "slides_getting_started.html#the-sticky-situation",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "The Sticky Situation",
-    "text": "The Sticky Situation\n\n\n\n\n\n“I’m lost / need help”\n\n\n\n\n“I’m done and ready to move along”\n👨‍💻 Put your sticky note on the back of your laptop screen 👩‍💻"
-  },
-  {
-    "objectID": "slides_getting_started.html#meeting-you-where-you-are",
-    "href": "slides_getting_started.html#meeting-you-where-you-are",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Meeting you where you are",
-    "text": "Meeting you where you are\n\n\n\nI’ll assume you\n\nhave limited or no R knowlege\nhave worked in Microsoft/Google Spreadsheets\nhave written a report on something\nwant to learn!\n\n\n\n\nI’ll teach you\n\nbasics of a using R\nhow to get unstuck\na framework of tools you can reuse!"
-  },
-  {
-    "objectID": "slides_getting_started.html#workshop-approach",
-    "href": "slides_getting_started.html#workshop-approach",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Workshop approach",
-    "text": "Workshop approach\nWe will use real bioassessment data to demonstrate some general data approaches to using open and reproducible workflows in R to summarizing and plotting data!.\n\n\n Conventions\n\n\n\n\n\n\n\n\n🧰\nAdd this to your toolbox.\n\n\n📣\nImportant announcement typically learned via trial and error…let us save you the pain\n\n\n\nDetour warning. There’s a lot more to talk about here but, but there’s not time today."
-  },
-  {
-    "objectID": "slides_getting_started.html#asking-questions",
-    "href": "slides_getting_started.html#asking-questions",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Asking Questions",
-    "text": "Asking Questions\n\n\n\n\nYou are always welcome to raise your hand! 🙋\n\n\n\n\n\n\nAlso feel free to ask in our shared doc!"
-  },
-  {
-    "objectID": "slides_getting_started.html#getting-help-r-functions",
-    "href": "slides_getting_started.html#getting-help-r-functions",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Getting help (R Functions)",
-    "text": "Getting help (R Functions)\nFunctions are the 🍞 and 🧈 of R programming!\n\n\nIf you want to access any function’s help page:\n# Method 1\nhelp(function_name_here)\n\n# Method 2\n?function_name_here\n\n# Method 3\n# Highlight the function and press F1 🤯"
-  },
-  {
-    "objectID": "slides_getting_started.html#lets-get-muddy",
-    "href": "slides_getting_started.html#lets-get-muddy",
-    "title": "Getting Started with R in Environmental Science",
-    "section": "Let’s get muddy!",
-    "text": "Let’s get muddy!"
-  },
-  {
-    "objectID": "getting_started.html",
-    "href": "getting_started.html",
-    "title": "Getting Started",
+    "objectID": "csci-summary.html#data",
+    "href": "csci-summary.html#data",
+    "title": "CSCI Summary",
     "section": "",
-    "text": "Ideally folks will have a chance to run through this prior to the workshop. It is one of the hurdles to getting going, but it gets easier!",
+    "text": "Let’s use the CSCI dataset and provide a couple quick summaries. First we load the libraries we need.\n\nlibrary(tidyverse)\nlibrary(gt)\nlibrary(sf)"
+  },
+  {
+    "objectID": "csci-summary.html#load-the-data",
+    "href": "csci-summary.html#load-the-data",
+    "title": "CSCI Summary",
+    "section": "Load the Data",
+    "text": "Load the Data\n\n# give the full URL to our data (a csv file)\ncsci_url &lt;- \"https://raw.githubusercontent.com/SCCWRP/CABW2018_R_training/master/data/cscidat.csv\"\n\n# read in this data and assign it to the name `cscidat`\ncscidat &lt;- read.csv(csci_url)"
+  },
+  {
+    "objectID": "csci-summary.html#summaries",
+    "href": "csci-summary.html#summaries",
+    "title": "CSCI Summary",
+    "section": "Summaries",
+    "text": "Summaries\nNext we add a figure. We can also summarize our total site count and show the distribution of CSCI scores.\n\n\n\n\n\n\n\n\nFigure 1: Histogram of values.\n\n\n\n\n\nThere are 1613 unique stations in this dataset.\n\n\n\n\n\n\n\n\nFigure 2: Map of stations."
+  },
+  {
+    "objectID": "csci-summary.html#a-table",
+    "href": "csci-summary.html#a-table",
+    "title": "CSCI Summary",
+    "section": "A Table",
+    "text": "A Table\nThe table below shows the first 20 rows in the dataset. How can we show the table but hide the code?\n\ncscidat |&gt;\n  slice_max(order_by = CSCI, n = 20) |&gt;\n  select(StationCode:COMID, E, OE, CSCI) |&gt; \n  gt()\n\n\n\nTable 1: Top 20 CSCI Scores\n\n\n\n\n\n\n\n\n\nStationCode\nNew_Lat\nNew_Long\nCOMID\nE\nOE\nCSCI\n\n\n\n\n801WCC247\n34.18786\n-117.1837\n22555238\n5.447870\n1.376685\n1.379737\n\n\n514SBCAMR\n38.76078\n-120.1069\n14982536\n12.253750\n1.387330\n1.299012\n\n\n801EEWADD\n34.18731\n-117.5206\n22555032\n5.605486\n1.248777\n1.275920\n\n\n603PS1056\n36.98204\n-118.3024\n20267009\n7.711865\n1.134615\n1.274597\n\n\n603RCC156\n37.47829\n-118.7211\n20276189\n10.337059\n1.349513\n1.274046\n\n\n405BRCASG\n34.24092\n-117.8845\n22524629\n11.338046\n1.331799\n1.267675\n\n\n204ALA525\n37.49619\n-121.7607\n2809691\n13.340252\n1.221866\n1.265904\n\n\n312RYCALR\n34.67439\n-119.2975\n17637988\n14.014138\n1.416427\n1.265537\n\n\n205R00088\n37.37200\n-122.2196\n17693241\n8.561980\n1.319788\n1.263590\n\n\n801ETC226\n34.19155\n-117.2741\n22555344\n6.497357\n1.346701\n1.257025\n\n\n405BRCAMS\n34.27377\n-117.8990\n22522723\n13.919592\n1.361390\n1.252668\n\n\n626PS0827\n34.38652\n-117.8250\n22683514\n12.056029\n1.293958\n1.251548\n\n\n404BA0142\n34.05048\n-118.7757\n20365145\n6.769153\n1.322174\n1.245042\n\n\nSMC04524\n34.24763\n-118.0336\n22520983\n7.361783\n1.263281\n1.240321\n\n\n403WE0683\n34.43961\n-119.0773\n17572791\n9.463567\n1.216948\n1.237798\n\n\n628PS1019\n34.33614\n-117.1614\n22658335\n7.006798\n1.284467\n1.236503\n\n\n801S02567\n34.18466\n-116.8968\n22558736\n9.485577\n1.201825\n1.236267\n\n\n403S01728\n34.57490\n-118.4600\n17569947\n8.896778\n1.337563\n1.233539\n\n\n601PS0077\n38.03098\n-119.1836\n20286400\n10.791122\n1.209327\n1.229394\n\n\n481S05856\n34.19149\n-117.6761\n22555020\n5.856703\n1.348882\n1.228902"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Learning R: Workflow vs Wrangling",
+    "section": "",
+    "text": "🗓 Oct 29, 2025\n🕘 1 pm - 5 pm",
     "crumbs": [
-      "Getting Started"
+      "Home"
     ]
   },
   {
-    "objectID": "getting_started.html#software",
-    "href": "getting_started.html#software",
-    "title": "Getting Started",
-    "section": "Software",
-    "text": "Software\nThe software that we will need is as follows. We recommend installing in this order as well. More detailed instructions can be found at each site, and here, (follow Steps 1 & 2).\n\nR\n\nR\nRStudio\nQuarto\n\n\n\nPackages\nThe next step is to install a few packages, which are libraries of functions (more on these later) that we can use to do different things. We install packages available for all R users from an online repository called CRAN, by pasting the following code into the RStudio Console window and hitting ENTER.\nFor our purposes we will be using a few packages, let’s try to install them now.\n\n# we make a concatenated list of packages\npkg_list &lt;- c(\n  \"tidyverse\", \"janitor\", \"here\", \"sf\", \"tigris\"\n)\n# then install each package in the list\ninstall.packages(pkg_list)",
-    "crumbs": [
-      "Getting Started"
-    ]
-  },
-  {
-    "objectID": "getting_started.html#getting-started",
-    "href": "getting_started.html#getting-started",
-    "title": "Getting Started",
-    "section": "Getting Started!",
-    "text": "Getting Started!\nView slides in full screen",
-    "crumbs": [
-      "Getting Started"
-    ]
-  },
-  {
-    "objectID": "4-tying-it-together/index.html",
-    "href": "4-tying-it-together/index.html",
-    "title": "Tying it Together!",
+    "objectID": "index.html#date-location",
+    "href": "index.html#date-location",
+    "title": "Learning R: Workflow vs Wrangling",
     "section": "",
-    "text": "View slides in full screen",
+    "text": "🗓 Oct 29, 2025\n🕘 1 pm - 5 pm",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Learning R: Workflow vs Wrangling",
+    "section": "Overview",
+    "text": "Overview\nYou likely already wrangle, analyze, and report environmental data of all types. Perhaps you use R sometimes, or maybe never before. But certainly you likely do similar tasks over and over, maybe using the same tools (e.g., Excel), or maybe a number of different tools. Are your tools re-usable? Can you reproduce your work efficiently and easily, building on the previous experience?\nNo matter the answer to these questions, this workshop will try to get through some of the basic principles of data wrangling and summarizing in R, how to re-use these tools, and how to build a reproducible workflow you can use to tackle whatever data challenge gets thrown your way.\nWe will walk through how to get data into R, how to summarize, join, and plot our data, as well as how to make some basic maps. Finally, we will touch on how to put this into a single report that you can re-use or revise as you see fit.\nThis course is for you if you:\n\ndo data analysis in Excel\ndo anything with spreadsheets and environmental data\nuse a computer regularly\ngenerate summaries or reports that use environmental data\nhave used R before\nhave never used R before",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Learning R: Workflow vs Wrangling",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n01:00 - 01:15\nGetting Started\n\n\n01:15 - 01:50\nData Wrangling & Project Workflow\n\n\n01:50 - 02:00\n☕ Take a break ☕\n\n\n02:00 - 02:50\nAdventures with Bioassessment Data\n\n\n02:50 - 03:00\n🧠 Brain break! 🧠\n\n\n03:00 - 03:50\nMake a Map! 🗺️\n\n\n03:50 - 04:00\n☕ Coffee break ☕\n\n\n04:00 - 04:30\nTying it Together 🪢\n\n\n04:30 - 05:00\nQ & A 🤨📚",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Learning R: Workflow vs Wrangling",
+    "section": "Instructor",
+    "text": "Instructor\nRyan Peek is Senior Environmental Scientist (Specialist) at California Department of Fish and Wildlife and reasearcher with UC Davis. Ryan prefers being outside in flowing water over most any other environment, and has worked in a wide range of environments and subject areas including biodiversity, climate change, drought, environmental monitoring, genomics, hydrology, aquatic ecology, food webs, conservation biology, and especially anything having to do with frogs.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#website",
+    "href": "index.html#website",
+    "title": "Learning R: Workflow vs Wrangling",
+    "section": "Website",
+    "text": "Website\nWebsite and slides, all built in Quarto with RStudio! Styles, Themes, and Layouts adapted/reused from the excellent posit::conf(2024) repo, specifically the Quarto Dashboard Workshop. Some fantastic resources exist that have been invaluable for learning how to put these types of workshops together, thanks to the open, available, and re-useable approach folks have taken. For Quarto Live / WASM, the excellent R Primers site by Andrew Heiss was invaluable.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#content",
+    "href": "index.html#content",
+    "title": "Learning R: Workflow vs Wrangling",
+    "section": "Content",
+    "text": "Content\nContent is largely built and adapted from the CABW 2018 R Training, and influenced by the excellent Carpentries workshops and community, Openscapes resources (including a Water Boards specific program), and the Davis R Users Group and R4WRDS course.\nUltimately, everything is and should be open to all for use, reuse, and learning.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "2-bioadventure/index.html",
+    "href": "2-bioadventure/index.html",
+    "title": "Bioassessment Data Adventure",
+    "section": "",
+    "text": "The general approach here can be to join tables (need to update site locations to include the county so as to avoid needing sf and tigris).\nJoin tables, summarize by county, find county with highest CSCI scores and county with lowest CSCI scores.\nGenerate a quick box plot comparison by county\nLook at trend latitudinally\nGenerate summary table of stations to monitor\nFind counties with fewest stations and identify sampling gaps",
     "crumbs": [
       "Modules",
-      "Tying it Together!"
+      "Bioassessment Data Adventure"
     ]
   },
   {
-    "objectID": "4-tying-it-together/index.html#slides",
-    "href": "4-tying-it-together/index.html#slides",
-    "title": "Tying it Together!",
-    "section": "",
-    "text": "View slides in full screen",
+    "objectID": "2-bioadventure/index.html#import-our-data",
+    "href": "2-bioadventure/index.html#import-our-data",
+    "title": "Bioassessment Data Adventure",
+    "section": "Import our Data",
+    "text": "Import our Data\nFirst off we want to import our data so we can use it. For this data adventure, let’s import three pieces, the CSCI values, the ASCI values, and a corresponding latitude & longitude list of our stations. We can then integrate all these pieces.\n\n\n\n\n\n\nTip📣 Load Libraries\n\n\n\nIf you are following along in your own RStudio Project, make sure to load the libraries first!1\nWe will use the following in this tutorial:\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(janitor)\nlibrary(ggplot2)",
     "crumbs": [
       "Modules",
-      "Tying it Together!"
+      "Bioassessment Data Adventure"
     ]
   },
   {
-    "objectID": "4-tying-it-together/index.html#exercises",
-    "href": "4-tying-it-together/index.html#exercises",
-    "title": "Tying it Together!",
-    "section": "Exercises",
-    "text": "Exercises\n\nR:\n\nOption 1: TBD\nOption 2: TBD",
+    "objectID": "2-bioadventure/index.html#selecting-and-filtering",
+    "href": "2-bioadventure/index.html#selecting-and-filtering",
+    "title": "Bioassessment Data Adventure",
+    "section": "Selecting and Filtering",
+    "text": "Selecting and Filtering\nA big part of working with data is figuring out how to select, filter, slice,, and summarizeour data into the pieces we want. The good news is each of these things is a function in the {dplyr} package, so we can walk through a few examples for each of these verbs.\n\nselect\nWe select columns. There are many options we can use to select the columns we want. Here are a few options, but there are many! Remember, we need to have loaded our dplyr package first.\n\n\n\n\n\n\nTip📣 To “Quote” or not to Quote\n\n\n\nOne difficult thing to be aware of in R is when and where we use quotation marks. For the most part, calling column names in dplyr does **Not* require quoting. However, if we are using specific values, these typically need to be “quoted”. Stay tuned for more!\n\n\n\n\n\n\n\n\n\n\nTry selecting everything but a few columns. Let’s select all but CSCI and COMID\n\n\n\n\n\n\n\n\nOr we can select a columns that start with \"New\"\n\n\n\n\n\n\n\n\n\n\nfilter\nWe filter rows. After we select some columns, you’ll probably want to remove observations that don’t fit some criteria. For example, maybe you want to remove CSCI scores less than some threshold, or find stations above a certain latitude, or both.\n\n\n\n\n\n\n\n\nWe can chain these together. In filter(), there are many ways to do this, but be aware if we use a , to separate different filters, it is treated as and. So both arguments must be met. For an either / or filter, we’d want to use a vertical bar, | separating our arguments.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip📣 Chaining or Piping (%&gt;% or |&gt;)\n\n\n\nWe can chain code together by using a pipe argument (%&gt;% or |&gt;). These can be viewed as passing whatever is coming from the left side, on to the right side. Think of this as doing an operation on an object, pass to the pipe (|&gt;) and then doing another operation.\nSo, above, we select columns from our filtered dataset, and then we summarize those columns.\n\n\n\n\nslice\nslice is another function in the {dplyr} package, which allows us to do additional filtering of data based on values or summarizing actions. Here we’ll use it to find the top ten CSCI values, but it is a powerful function with many uses, and can be easily chained together with other functions like filter and select.",
     "crumbs": [
       "Modules",
-      "Tying it Together!"
+      "Bioassessment Data Adventure"
     ]
   },
   {
-    "objectID": "1-data-wrangling/index.html",
-    "href": "1-data-wrangling/index.html",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "There are many ways to learn R, but one of the best ways is to jump right in with some data you can get your hands dirty with. R is an amazing tool, and often there are many ways to do the same thing, however we always need to start with data!\n\n\nThe data set we are using is a subset of the California Stream Condition Index (CSCI) and the Algal Stream Condition Index (ASCI). These data represent a portion of the sampling sites that were used to develop each index. The CSCI is based on the comparison of the observed assemblage of benthic macroinvertebrate species to those expected from studying reference streams. It provides a scientifically robust way of assessing and describing conditions and tracking conditions over time or in response to regulatory or restoration actions. Theses indices are built on a few main components:\n\nRatio of observed to expected taxanomic groups (OE)\nProportion of the assemblage that falls into different functional groups that represent species diversity, ecosystem function, and sensitivity to stress.\n\n\n\n\n\n\nDrawing of a Caddisfly larvae (Trichoptera: Hydropsychidae), K. Mertz, 2015.\n\n\nThe CSCI value is not normalized to a 0 to 1 or 100 scale, but instead compares Index values at test sites to values at comparable reference sites. The mean Index value of reference sites is 1.01. The 90th percentile value is 0.85, thus:\n\nstreams with values &gt;0.85 are considered to be likely intact\nstreams with values between 0.72 and 0.85 are considered likely altered\nstreams with values &lt;0.72 are considered very likely altered\n\nFor more information about these data, and lots of great research showing the utility for monitoring, watershed health, and more, check out here, here, here and here.\n\n\n\nLet’s get some data to play with! To start, we’ll use a URL of the data set we want to work with, and read it directly from the interwebs into R. It is a .csv, which means we can use a read.csv function, which is one of the functions that comes built in to R (often called base R).\n\n\n\n\n\n\n📣 Interactive Code!\n\n\n\nThe code below is interactive, meaning you can type and change different things and then click Run Code each time to run R right in the browser. This will run all the code in the chunk. If you are following along in RStudio, run these commands in the Console.\n\n\n\n\n\n\n\n\n\n\nWe have data! What did we do? We used &lt;- assignment to save an object into our Environment. In RStudio, take a look at the Environment tab, when we save or assign a value, it should show up there!\n\n\n\n\nLet’s try to learn a little more about the kind of data we have. We know it came from a .csv, but in R (and programming generally), there are some specific types and forms of data that we should be aware of. We can use a few more functions here, str() for structure, and head() for the first few rows.\n\n\n\n\n\n\n\n\nThere are a bewildering number of formats for storing data and R is no exception. Understanding the basic building blocks that make up data types is essential. All functions in R require specific types of input data and the key to using functions is knowing how these types relate to each other. We’re going talk about a few of the most common.\n\n\nThe basic data format in R is a vector - a one-dimensional grouping of elements that have the same data type. These are all vectors and they are created with the c() function:\n\n\n\n\n\n\n\n\nThe four types of atomic vectors (think atoms that make up a molecule aka vector) are double (or numeric), integer, logical, and character. Each type has some useful properties and each helps define limits or constraints on the data. Basically, functions in R require a specific types of data, and won’t work without them.\n\n\n\n\n\n\n📣 Common errors\n\n\n\nPlay around with these because beyond typing errors, one of the most common issues is data that is of the wrong structure or type. Get to know the basic building blocks!\n\n\n\n\n\nWe are likely familiar with a spreadsheet…which is a type of two-dimensional data. In R, the cool thing is that a collection of vectors is a data frame, which keeps columns as vectors of the same type of data. Just as in a spreadsheet, a column describes a variable and rows link observations between columns.\nLet’s look at our cscidat again.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📣 Data frame constraints\n\n\n\nIn R, the only constraints required to make a data frame are:\n\nEach column contains the same type of data\nThe number of observations in each column is equal.\n\nThese are good practices to use in spreadsheets too!\n\n\n\n\n\n\nThe base install of R is quite powerful, but the universe of R programming is an amazing place, and there are are many thousands of packages available that provide functions we can use for all kinds of things. This diversity and flexibility is what makes R awesome (and sometimes frustrating!). Packages are the spellbooks we can download and install for use. There is so much to say about packages regarding finding them, using them, etc., but for now let’s focus just on the basics.\n\nCRAN: One of the reasons for R’s popularity is CRAN, The Comprehensive R Archive Network. This is where you download R and also where most will gain access to packages (there are other places, but that is for later). Not much else to say about this now other than to be aware of it. As of Fall 2025, there are +22,800 packages on CRAN!\n\nWhen a package gets installed, that means the source code is downloaded and put into your local computer R library. A default library location is set for you, so let’s download some packages!\nTry this in RStudio on your own by running the following code in the Console:\n\n# install packages from CRAN\ninstall.packages(\"tidyverse\")\ninstall.packages(\"janitor\")\ninstall.packages(\"sf\")\n\nOnce our Console returns back to the &gt; symbol and there is no red stop sign in the upper right hand corner of Rstudio, let’s see if the installation worked. Try the following in your console:\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(janitor)\n\n\n\n\n\n\n📣 Packages\n\n\n\nWe only need to install packages once per R version, but we need to load packages every session before we can use them with the library() function.\n\n\nIf everything worked, hopefully we’ll see something like below. Don’t worry if the version numbers are slightly different, these can change depending on the operating system and version of R you are using.\n\n\n\n\n\n\n\n\n\n\n📣 Important Note\n\n\n\nIf you only take one thing away from today, please make sure it is this: there are many, many options to get help from. Part of learning is sifting through, trying, failing, and trying again. Don’t be discouraged if something isn’t working, please reach out and leverage your R community!\n\n\nBeing able to find help and interpret that help is probably one of the most important skills for learning a new language. R is no different. Help on functions and packages can be accessed directly from R, can be found on CRAN and other official R resources, searched on Google, etc.\n\n\nGetting help from the console is straightforward and can be done numerous ways. Try some of the commands below and see what happens in RStudio. When you know the name of a function, use the console and type help(&lt;function&gt;) or ?&lt;function&gt;\n# Using the help command/shortcut\nhelp(\"print\") # Help on the print command\n?print # Help on the print command using the `?` shortcut\n\n# When you know the name of the package\nhelp(package = \"sf\") # Help on the package `dplyr`\n\n\n# Don't know the exact name or just part of it\napropos(\"print\") # Returns all available functions with \"print\" in the name\n\n??print # shortcut, but also searches demos and vignettes in a formatted page\n\nWhile the resources already mentioned are useful, often the quickest way is to just turn to Google (and now LLM).\nHowever, searching for “R” answers straight from Google can be challenging and still requires understanding what the question (or error) actually is. A few tips:\n\nWhen using search engines, always preface the search with “r” or “[R]”\nGet a sense of what sources are reliable\nTake note of the number of hits and date of a web page\nWhen in doubt, search with the exact error message (see here for details about warnings vs errors)\n\n\n\n\n\n\n\n Using LLMs\n\n\n\nUsing tools like ChatGPT can be helpful. Some models are better than others for R, but just a strong caution and general bit of advice.\nMake sure to understand each piece of code that you run when getting suggestions for code from LLMs. Sometimes it will be great, sometimes it will be very wrong, and many times it’s a combination of both.\nLearning to program requires repetition, both in success and in failure, and understanding why something breaks can be much more informative to learning than knowing something just works.",
+    "objectID": "2-bioadventure/index.html#renaming",
+    "href": "2-bioadventure/index.html#renaming",
+    "title": "Bioassessment Data Adventure",
+    "section": "Renaming",
+    "text": "Renaming\nOften times we need to rename our columns in order to make joining data easier, or for tables and plots that we want to share out. There are a few ways to rename columns in R.\nWe can use the dplyr::rename() function to specifically rename columns of interest. This requires the data, and a list of the columns we are interested in changing, formatted as: new_name = old_name.\n\n\n\n\n\n\n\n\nAnother great tool is the {janitor} package. We can use a number of functions in janitor, but most commonly I use it to clean all the column names.",
     "crumbs": [
       "Modules",
-      "Data Wrangling"
+      "Bioassessment Data Adventure"
     ]
   },
   {
-    "objectID": "1-data-wrangling/index.html#data-background",
-    "href": "1-data-wrangling/index.html#data-background",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "The data set we are using is a subset of the California Stream Condition Index (CSCI) and the Algal Stream Condition Index (ASCI). These data represent a portion of the sampling sites that were used to develop each index. The CSCI is based on the comparison of the observed assemblage of benthic macroinvertebrate species to those expected from studying reference streams. It provides a scientifically robust way of assessing and describing conditions and tracking conditions over time or in response to regulatory or restoration actions. Theses indices are built on a few main components:\n\nRatio of observed to expected taxanomic groups (OE)\nProportion of the assemblage that falls into different functional groups that represent species diversity, ecosystem function, and sensitivity to stress.\n\n\n\n\n\n\nDrawing of a Caddisfly larvae (Trichoptera: Hydropsychidae), K. Mertz, 2015.\n\n\nThe CSCI value is not normalized to a 0 to 1 or 100 scale, but instead compares Index values at test sites to values at comparable reference sites. The mean Index value of reference sites is 1.01. The 90th percentile value is 0.85, thus:\n\nstreams with values &gt;0.85 are considered to be likely intact\nstreams with values between 0.72 and 0.85 are considered likely altered\nstreams with values &lt;0.72 are considered very likely altered\n\nFor more information about these data, and lots of great research showing the utility for monitoring, watershed health, and more, check out here, here, here and here.",
+    "objectID": "2-bioadventure/index.html#modifying-and-summarizing-data",
+    "href": "2-bioadventure/index.html#modifying-and-summarizing-data",
+    "title": "Bioassessment Data Adventure",
+    "section": "Modifying and Summarizing Data",
+    "text": "Modifying and Summarizing Data\nWhen we want to add, revise, or summarize our data, we need to use a few additional functions in {dplyr}. We can use these to create new columns, calculate new data based on existing data, or create summaries based on different groups within our data.\n\nmutate (adding columns)\nWe’ve seen how to filter observations (rows) and select columns of a data frame. In {dplyr}, mutate allows us to add new columns to an existing data frame. These can be vectors you are adding or based on expressions applied to existing columns. For instance, maybe we want to convert a numeric column into a categorical using some criteria or maybe we want to make a new column based on some arithmetic on some other columns.\n\n\n\n\n\n\n\n\n\n\nsummarize Data\nA very powerful verb in the {dplyr} package is summarize. Note, when we use mutate, we get back the same data frame, but with whatever revision or addition we have made to the columns. With summarize, we will get a new dataframe based on the summary operation we have requested.\nThe key with summarize is there is typically some sort of grouping variable that we want to use to do our summary. For example, maybe we want to get the max and min CSCI score by the stream COMID (unique segment ID for every stream line).\n\n\n\n\n\n\n\n\nWhat if we want to know which of these COMIDs actually had more than one value to calculate the min and max? We can use another summarizing shortcut called tally. It works the same way as summarize but is designed specifically for counting unique values, or getting the sum of those values based on a grouping value.\nWe can combine this with arrange to sort our data by a column of interest, and desc to sort in descending order.\n\n\n\n\n\n\n\n\n\n\nbind Data\nSometimes when we don’t need to worry about joining specifically, and we want to append or mash datasets together, we can use the bind functions. There are base options as well as {dplyr} options. Let’s revisit the slice function we used above, and make a new dataframe that is just the StationCode, CSCI, and Lat and Lon for the top 10 and bottom 10 CSCI values. We can bind rows, or bind columns, depending on what we are trying to do.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip📣 Binding data frames\n\n\n\nRemember, a vector is essentially a column of a single type of data. And data frames have to have columns with the same number of rows. So when binding rows, they need to be the same data class in each column, and when binding columns, they must have the same number of rows as the data frame.",
     "crumbs": [
       "Modules",
-      "Data Wrangling"
+      "Bioassessment Data Adventure"
     ]
   },
   {
-    "objectID": "1-data-wrangling/index.html#import-read-in-data",
-    "href": "1-data-wrangling/index.html#import-read-in-data",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "Let’s get some data to play with! To start, we’ll use a URL of the data set we want to work with, and read it directly from the interwebs into R. It is a .csv, which means we can use a read.csv function, which is one of the functions that comes built in to R (often called base R).\n\n\n\n\n\n\n📣 Interactive Code!\n\n\n\nThe code below is interactive, meaning you can type and change different things and then click Run Code each time to run R right in the browser. This will run all the code in the chunk. If you are following along in RStudio, run these commands in the Console.\n\n\n\n\n\n\n\n\n\n\nWe have data! What did we do? We used &lt;- assignment to save an object into our Environment. In RStudio, take a look at the Environment tab, when we save or assign a value, it should show up there!",
+    "objectID": "2-bioadventure/index.html#joining",
+    "href": "2-bioadventure/index.html#joining",
+    "title": "Bioassessment Data Adventure",
+    "section": "Joining",
+    "text": "Joining\nCombining data is a common task of data wrangling. All joins require that each of the tables can be linked by some shared identifier or key columns. These are usually represented as columns that are unique for each observations. Our example datasets include the StationID or SampleID columns that represent unique identifiers of the station, sample date, and/or replicate.\nThe challenge with joins is that the two datasets may not represent the same observations for a given key. For example, you might have one table with all observations for every key, another with only some observations, or two tables with only a few shared keys. What you get back from a join will depend on what’s shared between tables, in addition to the type of join you use.\nFor our data, we’ll be using an inner_join that combines datasets by shared keys (for an overview of the other types of joins, see R4DS lesson here.\n\n\n\nFigures by Garrick Adenbuie, see here for more\n\n\nWe need to either rename the key columns of interest so they are identical, or we can specify them explicitly when joining. Let’s show both options below:\n\n\n\n\n\n\n\n\nLet’s look at these two approaches above, break down the differences, and talk about what happened. Joins are particularly important, but can be difficult to deal with.\nWe could join by multiple columns, so if we wanted to join by id and the New_Lat and New_Long fields, we could say by=c(\"SampleID_old\"=\"id\", \"New_Lat\", \"New_Long\"). Note, for columns with the exact same name, we don’t need the = to define for each dataset.\nIt is always important to bear in mind what type of join we are using, understand and inspect the results, and check that against expectations of what we think we should get back. The computer will only do what we tell it, for better or worse!",
     "crumbs": [
       "Modules",
-      "Data Wrangling"
+      "Bioassessment Data Adventure"
     ]
   },
   {
-    "objectID": "1-data-wrangling/index.html#data-structures-in-r",
-    "href": "1-data-wrangling/index.html#data-structures-in-r",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "Let’s try to learn a little more about the kind of data we have. We know it came from a .csv, but in R (and programming generally), there are some specific types and forms of data that we should be aware of. We can use a few more functions here, str() for structure, and head() for the first few rows.\n\n\n\n\n\n\n\n\nThere are a bewildering number of formats for storing data and R is no exception. Understanding the basic building blocks that make up data types is essential. All functions in R require specific types of input data and the key to using functions is knowing how these types relate to each other. We’re going talk about a few of the most common.\n\n\nThe basic data format in R is a vector - a one-dimensional grouping of elements that have the same data type. These are all vectors and they are created with the c() function:\n\n\n\n\n\n\n\n\nThe four types of atomic vectors (think atoms that make up a molecule aka vector) are double (or numeric), integer, logical, and character. Each type has some useful properties and each helps define limits or constraints on the data. Basically, functions in R require a specific types of data, and won’t work without them.\n\n\n\n\n\n\n📣 Common errors\n\n\n\nPlay around with these because beyond typing errors, one of the most common issues is data that is of the wrong structure or type. Get to know the basic building blocks!\n\n\n\n\n\nWe are likely familiar with a spreadsheet…which is a type of two-dimensional data. In R, the cool thing is that a collection of vectors is a data frame, which keeps columns as vectors of the same type of data. Just as in a spreadsheet, a column describes a variable and rows link observations between columns.\nLet’s look at our cscidat again.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📣 Data frame constraints\n\n\n\nIn R, the only constraints required to make a data frame are:\n\nEach column contains the same type of data\nThe number of observations in each column is equal.\n\nThese are good practices to use in spreadsheets too!",
+    "objectID": "2-bioadventure/index.html#plotting-with-ggplot2",
+    "href": "2-bioadventure/index.html#plotting-with-ggplot2",
+    "title": "Bioassessment Data Adventure",
+    "section": "Plotting with ggplot2",
+    "text": "Plotting with ggplot2\nThe entire workflow of data exploration often hinges on looking at your data, whether you’re exploring a dataset for the first time or creating publication-ready figures. Visualizing your data is important to provide insight into patterns, and opens the door to asking different questions.\nR is an amazing system for visualizing data, and we can only scratch the surface! We will introduce some of the core concepts and structure of the popular {ggplot2} package. Based on what is known as the grammar of graphics, designed to make thinking, reasoning, and communicating about graphs easier by following a few simple rules. Like learning to write a sentence, the grammar of building a graph also must start with a standardized foundation that can be used for building more complex visualizations.\n\nggplot()\nThe nice thing is that with {ggplot2}, everything begins with the function ggplot(). Then we can add layers to this foundation. The first argument of ggplot() is the dataset to use in the graph. So this creates an empty plot:\n\n\n\n\n\n\n\n\n\n\ngeoms\nOnce we have added the foundation, we then can build the figure we want, layer by layer. These are typically geoms or geometries that correspond with a type of visualization. For example, the function geom_point() adds a layer of points to your plot, which creates a scatterplot. {ggplot2} comes with many geom functions that each add a different type of layer to a plot.\nOne important difference to be aware of, layers in ggplot are added using a +, not a pipe!\n\n\ngeom arguments\nEvery geom_ function in {ggplot2} takes these important components.\n\ndata: This can be specified in the foundation ggplot() call, or in individual geom_ layers. By default, {ggplot2} looks for the mapped variable in the ggplot(data=) argument, which in our case, comes from all_data.\nmapping arguments. These define the aesthetics of the layer, and specify how variables in your dataset are mapped to visual properties.\n\naes(): The aesthetic function, which is where we typically always specify the x= and y= arguments to map variables to the x and y axes.\n\n\nHere’s the core unit of every ggplot:\nggplot(data = &lt;DATA&gt;) + \n  &lt;GEOM_FUNCTION&gt;(mapping = aes(&lt;MAPPINGS&gt;))\nAnd here’s what it actually looks like in practice:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip📣 Specifying Argument Names\n\n\n\nYou may notice sometimes we drop the function argument names (geom_point(aes()) instead of geom_point(mapping=aes())). Functions will usually work without the argument name, assuming we put the values in the same order that the function expects. However, in some cases it is important to be specific. Specifying the data= argument is often important in ggplot. You’ll get a sense of when and where we can drop those argument names as you play with plotting!\n\n\n\n\nA geom_boxplot\nLet’s make one final plot to practice, and get a sense of the data. Let’s make a boxplot by the different stream types. You’ll notice an NA category. How can we filter out the NAs from the data and remake the plot?\n\nChallengeHintsSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsider piping the filter() function from dplyr. We can then try the negate (!) with is.na() for CSCI and site_type.\n|&gt; filter(!is.na( _____ )) +\n\n\n\n\nUse the filter() function from dplyr:\n1ggplot(data = all_data |&gt;\n2filter(!is.na(site_type), !is.na(CSCI))) +\n3  geom_boxplot(mapping = aes(x = site_type, y = CSCI))\n\n1\n\nTake all_data while in ggplot(), and then,\n\n2\n\nFilter out NA from site_type and CSCI and make sure to close the ggplot()\n\n3\n\nAdd the geom_boxplot()",
     "crumbs": [
       "Modules",
-      "Data Wrangling"
+      "Bioassessment Data Adventure"
     ]
   },
   {
-    "objectID": "1-data-wrangling/index.html#installing-packages",
-    "href": "1-data-wrangling/index.html#installing-packages",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "The base install of R is quite powerful, but the universe of R programming is an amazing place, and there are are many thousands of packages available that provide functions we can use for all kinds of things. This diversity and flexibility is what makes R awesome (and sometimes frustrating!). Packages are the spellbooks we can download and install for use. There is so much to say about packages regarding finding them, using them, etc., but for now let’s focus just on the basics.\n\nCRAN: One of the reasons for R’s popularity is CRAN, The Comprehensive R Archive Network. This is where you download R and also where most will gain access to packages (there are other places, but that is for later). Not much else to say about this now other than to be aware of it. As of Fall 2025, there are +22,800 packages on CRAN!\n\nWhen a package gets installed, that means the source code is downloaded and put into your local computer R library. A default library location is set for you, so let’s download some packages!\nTry this in RStudio on your own by running the following code in the Console:\n\n# install packages from CRAN\ninstall.packages(\"tidyverse\")\ninstall.packages(\"janitor\")\ninstall.packages(\"sf\")\n\nOnce our Console returns back to the &gt; symbol and there is no red stop sign in the upper right hand corner of Rstudio, let’s see if the installation worked. Try the following in your console:\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(janitor)\n\n\n\n\n\n\n📣 Packages\n\n\n\nWe only need to install packages once per R version, but we need to load packages every session before we can use them with the library() function.\n\n\nIf everything worked, hopefully we’ll see something like below. Don’t worry if the version numbers are slightly different, these can change depending on the operating system and version of R you are using.",
+    "objectID": "2-bioadventure/index.html#footnotes",
+    "href": "2-bioadventure/index.html#footnotes",
+    "title": "Bioassessment Data Adventure",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThese libraries are loaded automagically behind the scenes in this webpage, which is why we don’t load them below.↩︎",
     "crumbs": [
       "Modules",
-      "Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "1-data-wrangling/index.html#getting-help",
-    "href": "1-data-wrangling/index.html#getting-help",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "📣 Important Note\n\n\n\nIf you only take one thing away from today, please make sure it is this: there are many, many options to get help from. Part of learning is sifting through, trying, failing, and trying again. Don’t be discouraged if something isn’t working, please reach out and leverage your R community!\n\n\nBeing able to find help and interpret that help is probably one of the most important skills for learning a new language. R is no different. Help on functions and packages can be accessed directly from R, can be found on CRAN and other official R resources, searched on Google, etc.\n\n\nGetting help from the console is straightforward and can be done numerous ways. Try some of the commands below and see what happens in RStudio. When you know the name of a function, use the console and type help(&lt;function&gt;) or ?&lt;function&gt;\n# Using the help command/shortcut\nhelp(\"print\") # Help on the print command\n?print # Help on the print command using the `?` shortcut\n\n# When you know the name of the package\nhelp(package = \"sf\") # Help on the package `dplyr`\n\n\n# Don't know the exact name or just part of it\napropos(\"print\") # Returns all available functions with \"print\" in the name\n\n??print # shortcut, but also searches demos and vignettes in a formatted page\n\nWhile the resources already mentioned are useful, often the quickest way is to just turn to Google (and now LLM).\nHowever, searching for “R” answers straight from Google can be challenging and still requires understanding what the question (or error) actually is. A few tips:\n\nWhen using search engines, always preface the search with “r” or “[R]”\nGet a sense of what sources are reliable\nTake note of the number of hits and date of a web page\nWhen in doubt, search with the exact error message (see here for details about warnings vs errors)\n\n\n\n\n\n\n\n Using LLMs\n\n\n\nUsing tools like ChatGPT can be helpful. Some models are better than others for R, but just a strong caution and general bit of advice.\nMake sure to understand each piece of code that you run when getting suggestions for code from LLMs. Sometimes it will be great, sometimes it will be very wrong, and many times it’s a combination of both.\nLearning to program requires repetition, both in success and in failure, and understanding why something breaks can be much more informative to learning than knowing something just works.",
-    "crumbs": [
-      "Modules",
-      "Data Wrangling"
+      "Bioassessment Data Adventure"
     ]
   },
   {
@@ -238,7 +204,7 @@
     "href": "4-tying-it-together/4-tying-it-together.html#wrangling-to-workflow",
     "title": "Tying it Together! 🪢",
     "section": "Wrangling to Workflow",
-    "text": "Wrangling to Workflow\n\n\nhopefully we now have an idea how to go from just wrangling…\nto workflows using re-useable tools!"
+    "text": "Wrangling to Workflow\n\nhopefully we now have an idea how to go from just wrangling…\nto workflows using re-useable tools!"
   },
   {
     "objectID": "4-tying-it-together/4-tying-it-together.html#quarto",
@@ -274,6 +240,48 @@
     "title": "Tying it Together! 🪢",
     "section": "Documents",
     "text": "Documents\n\nLots of options .pdf, .html, .docx\nEasiest to start with .html!\nWe can embed our code and figures with the text!\nClick “Render” = AutoMagically make a report!"
+  },
+  {
+    "objectID": "4-tying-it-together/4-tying-it-together.html#lets-make-one",
+    "href": "4-tying-it-together/4-tying-it-together.html#lets-make-one",
+    "title": "Tying it Together! 🪢",
+    "section": "Let’s Make One!",
+    "text": "Let’s Make One!\nDownload and Open csci-summary.qmd in RStudio and…\n\nRender the document.\nReplace the name with your own and re-render.\nInspect the parts of the document and change something else or add some new text. Re-Render!\nCompare with your neighbor and find what they did!"
+  },
+  {
+    "objectID": "4-tying-it-together/4-tying-it-together.html#making-a-.qmd-document-from-scratch",
+    "href": "4-tying-it-together/4-tying-it-together.html#making-a-.qmd-document-from-scratch",
+    "title": "Tying it Together! 🪢",
+    "section": "Making a .Qmd Document from Scratch",
+    "text": "Making a .Qmd Document from Scratch\n\n\n\nIn RStudio, File &gt; New File &gt; Quarto Document\nAdd a Title, and keep everything else as a default, then click Create!\nWe can always change things later"
+  },
+  {
+    "objectID": "4-tying-it-together/4-tying-it-together.html#quarto-components-3-main-pieces",
+    "href": "4-tying-it-together/4-tying-it-together.html#quarto-components-3-main-pieces",
+    "title": "Tying it Together! 🪢",
+    "section": "Quarto Components: 3 main pieces",
+    "text": "Quarto Components: 3 main pieces"
+  },
+  {
+    "objectID": "4-tying-it-together/4-tying-it-together.html#part-1-the-metadata-yaml-header",
+    "href": "4-tying-it-together/4-tying-it-together.html#part-1-the-metadata-yaml-header",
+    "title": "Tying it Together! 🪢",
+    "section": "Part 1: The Metadata (yaml) header",
+    "text": "Part 1: The Metadata (yaml) header\n---\ntitle: \"CSCI Summary\"\nformat: html\n\nexecute: \n  echo: true\n---\n\nThis needs to go at the top of our document\nIt provides info about what format our document will take\nMany themes and many MANY options"
+  },
+  {
+    "objectID": "4-tying-it-together/4-tying-it-together.html#part-2-the-markdown-text",
+    "href": "4-tying-it-together/4-tying-it-together.html#part-2-the-markdown-text",
+    "title": "Tying it Together! 🪢",
+    "section": "Part 2: The Markdown Text",
+    "text": "Part 2: The Markdown Text\nMarkdown is designed to be easy to write and easy to read, and can be saved/published as plain text.\n\nSee Quarto website for more!"
+  },
+  {
+    "objectID": "4-tying-it-together/4-tying-it-together.html#part-3-the-code-chunks",
+    "href": "4-tying-it-together/4-tying-it-together.html#part-3-the-code-chunks",
+    "title": "Tying it Together! 🪢",
+    "section": "Part 3: The Code Chunks",
+    "text": "Part 3: The Code Chunks\nCan use multiple languages, just need to:\n\nsandwich code between “fences” of at least three backticks. An optional language provides syntax highlighting if available.\n\n```{r}\nlibrary(ggplot2)\n```"
   },
   {
     "objectID": "4-tying-it-together/4-tying-it-together.html#dashboards",
@@ -381,73 +389,230 @@
     "text": "Steps 1 - 4"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Learning R: Workflow vs Wrangling",
+    "objectID": "1-data-wrangling/index.html",
+    "href": "1-data-wrangling/index.html",
+    "title": "Data Wrangling",
     "section": "",
-    "text": "🗓 Oct 29, 2025\n🕘 1 pm - 5 pm",
+    "text": "There are many ways to learn R, but one of the best ways is to jump right in with some data you can get your hands dirty with. R is an amazing tool, and often there are many ways to do the same thing, however we always need to start with data!\n\n\nThe data set we are using is a subset of the California Stream Condition Index (CSCI) and the Algal Stream Condition Index (ASCI). These data represent a portion of the sampling sites that were used to develop each index. The CSCI is based on the comparison of the observed assemblage of benthic macroinvertebrate species to those expected from studying reference streams. It provides a scientifically robust way of assessing and describing conditions and tracking conditions over time or in response to regulatory or restoration actions. Theses indices are built on a few main components:\n\nRatio of observed to expected taxanomic groups (OE)\nProportion of the assemblage that falls into different functional groups that represent species diversity, ecosystem function, and sensitivity to stress.\n\n\n\n\n\n\nDrawing of a Caddisfly larvae (Trichoptera: Hydropsychidae), K. Mertz, 2015.\n\n\nThe CSCI value is not normalized to a 0 to 1 or 100 scale, but instead compares Index values at test sites to values at comparable reference sites. The mean Index value of reference sites is 1.01. The 90th percentile value is 0.85, thus:\n\nstreams with values &gt;0.85 are considered to be likely intact\nstreams with values between 0.72 and 0.85 are considered likely altered\nstreams with values &lt;0.72 are considered very likely altered\n\nFor more information about these data, and lots of great research showing the utility for monitoring, watershed health, and more, check out here, here, here and here.\n\n\n\nLet’s get some data to play with! To start, we’ll use a URL of the data set we want to work with, and read it directly from the interwebs into R. It is a .csv, which means we can use a read.csv function, which is one of the functions that comes built in to R (often called base R).\n\n\n\n\n\n\nTip📣 Interactive Code!\n\n\n\nThe code below is interactive, meaning you can type and change different things and then click Run Code each time to run R right in the browser. This will run all the code in the chunk. If you are following along in RStudio, run these commands in the Console.\n\n\n\n\n\n\n\n\n\n\nWe have data! What did we do? We used &lt;- assignment to save an object into our Environment. In RStudio, take a look at the Environment tab, when we save or assign a value, it should show up there!\n\n\n\n\nLet’s try to learn a little more about the kind of data we have. We know it came from a .csv, but in R (and programming generally), there are some specific types and forms of data that we should be aware of. We can use a few more functions here, str() for structure, and head() for the first few rows.\n\n\n\n\n\n\n\n\nThere are a bewildering number of formats for storing data and R is no exception. Understanding the basic building blocks that make up data types is essential. All functions in R require specific types of input data and the key to using functions is knowing how these types relate to each other. We’re going talk about a few of the most common.\n\n\nThe basic data format in R is a vector - a one-dimensional grouping of elements that have the same data type. These are all vectors and they are created with the c() function:\n\n\n\n\n\n\n\n\nThe four types of atomic vectors (think atoms that make up a molecule aka vector) are double (or numeric), integer, logical, and character. Each type has some useful properties and each helps define limits or constraints on the data. Basically, functions in R require a specific types of data, and won’t work without them.\n\n\n\n\n\n\nTip📣 Common errors\n\n\n\nPlay around with these because beyond typing errors, one of the most common issues is data that is of the wrong structure or type. Get to know the basic building blocks!\n\n\n\n\n\nWe are likely familiar with a spreadsheet…which is a type of two-dimensional data. In R, the cool thing is that a collection of vectors is a data frame, which keeps columns as vectors of the same type of data. Just as in a spreadsheet, a column describes a variable and rows link observations between columns.\nLet’s look at our cscidat again.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution📣 Data frame constraints\n\n\n\nIn R, the only constraints required to make a data frame are:\n\nEach column contains the same type of data\nThe number of observations in each column is equal.\n\nThese are good practices to use in spreadsheets too!\n\n\n\n\n\n\nThe base install of R is quite powerful, but the universe of R programming is an amazing place, and there are are many thousands of packages available that provide functions we can use for all kinds of things. This diversity and flexibility is what makes R awesome (and sometimes frustrating!). Packages are the spellbooks we can download and install for use. There is so much to say about packages regarding finding them, using them, etc., but for now let’s focus just on the basics.\n\nCRAN: One of the reasons for R’s popularity is CRAN, The Comprehensive R Archive Network. This is where you download R and also where most will gain access to packages (there are other places, but that is for later). Not much else to say about this now other than to be aware of it. As of Fall 2025, there are +22,800 packages on CRAN!\n\nWhen a package gets installed, that means the source code is downloaded and put into your local computer R library. A default library location is set for you, so let’s download some packages!\nTry this in RStudio on your own by running the following code in the Console:\n\n# install packages from CRAN\ninstall.packages(\"tidyverse\")\ninstall.packages(\"janitor\")\ninstall.packages(\"sf\")\n\nOnce our Console returns back to the &gt; symbol and there is no red stop sign in the upper right hand corner of Rstudio, let’s see if the installation worked. Try the following in your console:\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(janitor)\n\n\n\n\n\n\nTip📣 Packages\n\n\n\nWe only need to install packages once per R version, but we need to load packages every session before we can use them with the library() function.\n\n\nIf everything worked, hopefully we’ll see something like below. Don’t worry if the version numbers are slightly different, these can change depending on the operating system and version of R you are using.\n\n\n\n\n\n\n\n\n\n\nCaution📣 Important Note\n\n\n\nIf you only take one thing away from today, please make sure it is this: there are many, many options to get help from. Part of learning is sifting through, trying, failing, and trying again. Don’t be discouraged if something isn’t working, please reach out and leverage your R community!\n\n\nBeing able to find help and interpret that help is probably one of the most important skills for learning a new language. R is no different. Help on functions and packages can be accessed directly from R, can be found on CRAN and other official R resources, searched on Google, etc.\n\n\nGetting help from the console is straightforward and can be done numerous ways. Try some of the commands below and see what happens in RStudio. When you know the name of a function, use the console and type help(&lt;function&gt;) or ?&lt;function&gt;\n# Using the help command/shortcut\nhelp(\"print\") # Help on the print command\n?print # Help on the print command using the `?` shortcut\n\n# When you know the name of the package\nhelp(package = \"sf\") # Help on the package `dplyr`\n\n\n# Don't know the exact name or just part of it\napropos(\"print\") # Returns all available functions with \"print\" in the name\n\n??print # shortcut, but also searches demos and vignettes in a formatted page\n\nWhile the resources already mentioned are useful, often the quickest way is to just turn to Google (and now LLM).\nHowever, searching for “R” answers straight from Google can be challenging and still requires understanding what the question (or error) actually is. A few tips:\n\nWhen using search engines, always preface the search with “r” or “[R]”\nGet a sense of what sources are reliable\nTake note of the number of hits and date of a web page\nWhen in doubt, search with the exact error message (see here for details about warnings vs errors)\n\n\n\n\n\n\n\nCaution Using LLMs\n\n\n\nUsing tools like ChatGPT can be helpful. Some models are better than others for R, but just a strong caution and general bit of advice.\nMake sure to understand each piece of code that you run when getting suggestions for code from LLMs. Sometimes it will be great, sometimes it will be very wrong, and many times it’s a combination of both.\nLearning to program requires repetition, both in success and in failure, and understanding why something breaks can be much more informative to learning than knowing something just works.",
     "crumbs": [
-      "Home"
+      "Modules",
+      "Data Wrangling"
     ]
   },
   {
-    "objectID": "index.html#date-location",
-    "href": "index.html#date-location",
-    "title": "Learning R: Workflow vs Wrangling",
+    "objectID": "1-data-wrangling/index.html#data-background",
+    "href": "1-data-wrangling/index.html#data-background",
+    "title": "Data Wrangling",
     "section": "",
-    "text": "🗓 Oct 29, 2025\n🕘 1 pm - 5 pm",
+    "text": "The data set we are using is a subset of the California Stream Condition Index (CSCI) and the Algal Stream Condition Index (ASCI). These data represent a portion of the sampling sites that were used to develop each index. The CSCI is based on the comparison of the observed assemblage of benthic macroinvertebrate species to those expected from studying reference streams. It provides a scientifically robust way of assessing and describing conditions and tracking conditions over time or in response to regulatory or restoration actions. Theses indices are built on a few main components:\n\nRatio of observed to expected taxanomic groups (OE)\nProportion of the assemblage that falls into different functional groups that represent species diversity, ecosystem function, and sensitivity to stress.\n\n\n\n\n\n\nDrawing of a Caddisfly larvae (Trichoptera: Hydropsychidae), K. Mertz, 2015.\n\n\nThe CSCI value is not normalized to a 0 to 1 or 100 scale, but instead compares Index values at test sites to values at comparable reference sites. The mean Index value of reference sites is 1.01. The 90th percentile value is 0.85, thus:\n\nstreams with values &gt;0.85 are considered to be likely intact\nstreams with values between 0.72 and 0.85 are considered likely altered\nstreams with values &lt;0.72 are considered very likely altered\n\nFor more information about these data, and lots of great research showing the utility for monitoring, watershed health, and more, check out here, here, here and here.",
     "crumbs": [
-      "Home"
+      "Modules",
+      "Data Wrangling"
     ]
   },
   {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Learning R: Workflow vs Wrangling",
-    "section": "Overview",
-    "text": "Overview\nYou likely already wrangle, analyze, and report environmental data of all types. Perhaps you use R sometimes, or maybe never before. But certainly you likely do similar tasks over and over, maybe using the same tools (e.g., Excel), or maybe a number of different tools. Are your tools re-usable? Can you reproduce your work efficiently and easily, building on the previous experience?\nNo matter the answer to these questions, this workshop will try to get through some of the basic principles of data wrangling and summarizing in R, how to re-use these tools, and how to build a reproducible workflow you can use to tackle whatever data challenge gets thrown your way.\nWe will walk through how to get data into R, how to summarize, join, and plot our data, as well as how to make some basic maps. Finally, we will touch on how to put this into a single report that you can re-use or revise as you see fit.\nThis course is for you if you:\n\ndo data analysis in Excel\ndo anything with spreadsheets and environmental data\nuse a computer regularly\ngenerate summaries or reports that use environmental data\nhave used R before\nhave never used R before",
+    "objectID": "1-data-wrangling/index.html#import-read-in-data",
+    "href": "1-data-wrangling/index.html#import-read-in-data",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Let’s get some data to play with! To start, we’ll use a URL of the data set we want to work with, and read it directly from the interwebs into R. It is a .csv, which means we can use a read.csv function, which is one of the functions that comes built in to R (often called base R).\n\n\n\n\n\n\nTip📣 Interactive Code!\n\n\n\nThe code below is interactive, meaning you can type and change different things and then click Run Code each time to run R right in the browser. This will run all the code in the chunk. If you are following along in RStudio, run these commands in the Console.\n\n\n\n\n\n\n\n\n\n\nWe have data! What did we do? We used &lt;- assignment to save an object into our Environment. In RStudio, take a look at the Environment tab, when we save or assign a value, it should show up there!",
     "crumbs": [
-      "Home"
+      "Modules",
+      "Data Wrangling"
     ]
   },
   {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Learning R: Workflow vs Wrangling",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n01:00 - 01:15\nGetting Started\n\n\n01:15 - 01:50\nData Wrangling & Project Workflow\n\n\n01:50 - 02:00\n☕ Take a break ☕\n\n\n02:00 - 02:50\nAdventures with Bioassessment Data\n\n\n02:50 - 03:00\n🧠 Brain break! 🧠\n\n\n03:00 - 03:50\nMake a Map! 🗺️\n\n\n03:50 - 04:00\n☕ Coffee break ☕\n\n\n04:00 - 04:30\nTying it Together 🪢\n\n\n04:30 - 05:00\nQ & A 🤨📚",
+    "objectID": "1-data-wrangling/index.html#data-structures-in-r",
+    "href": "1-data-wrangling/index.html#data-structures-in-r",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Let’s try to learn a little more about the kind of data we have. We know it came from a .csv, but in R (and programming generally), there are some specific types and forms of data that we should be aware of. We can use a few more functions here, str() for structure, and head() for the first few rows.\n\n\n\n\n\n\n\n\nThere are a bewildering number of formats for storing data and R is no exception. Understanding the basic building blocks that make up data types is essential. All functions in R require specific types of input data and the key to using functions is knowing how these types relate to each other. We’re going talk about a few of the most common.\n\n\nThe basic data format in R is a vector - a one-dimensional grouping of elements that have the same data type. These are all vectors and they are created with the c() function:\n\n\n\n\n\n\n\n\nThe four types of atomic vectors (think atoms that make up a molecule aka vector) are double (or numeric), integer, logical, and character. Each type has some useful properties and each helps define limits or constraints on the data. Basically, functions in R require a specific types of data, and won’t work without them.\n\n\n\n\n\n\nTip📣 Common errors\n\n\n\nPlay around with these because beyond typing errors, one of the most common issues is data that is of the wrong structure or type. Get to know the basic building blocks!\n\n\n\n\n\nWe are likely familiar with a spreadsheet…which is a type of two-dimensional data. In R, the cool thing is that a collection of vectors is a data frame, which keeps columns as vectors of the same type of data. Just as in a spreadsheet, a column describes a variable and rows link observations between columns.\nLet’s look at our cscidat again.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution📣 Data frame constraints\n\n\n\nIn R, the only constraints required to make a data frame are:\n\nEach column contains the same type of data\nThe number of observations in each column is equal.\n\nThese are good practices to use in spreadsheets too!",
     "crumbs": [
-      "Home"
+      "Modules",
+      "Data Wrangling"
     ]
   },
   {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "Learning R: Workflow vs Wrangling",
-    "section": "Instructor",
-    "text": "Instructor\nRyan Peek is Senior Environmental Scientist (Specialist) at California Department of Fish and Wildlife and reasearcher with UC Davis. Ryan prefers being outside in flowing water over most any other environment, and has worked in a wide range of environments and subject areas including biodiversity, climate change, drought, environmental monitoring, genomics, hydrology, aquatic ecology, food webs, conservation biology, and especially anything having to do with frogs.",
+    "objectID": "1-data-wrangling/index.html#installing-packages",
+    "href": "1-data-wrangling/index.html#installing-packages",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "The base install of R is quite powerful, but the universe of R programming is an amazing place, and there are are many thousands of packages available that provide functions we can use for all kinds of things. This diversity and flexibility is what makes R awesome (and sometimes frustrating!). Packages are the spellbooks we can download and install for use. There is so much to say about packages regarding finding them, using them, etc., but for now let’s focus just on the basics.\n\nCRAN: One of the reasons for R’s popularity is CRAN, The Comprehensive R Archive Network. This is where you download R and also where most will gain access to packages (there are other places, but that is for later). Not much else to say about this now other than to be aware of it. As of Fall 2025, there are +22,800 packages on CRAN!\n\nWhen a package gets installed, that means the source code is downloaded and put into your local computer R library. A default library location is set for you, so let’s download some packages!\nTry this in RStudio on your own by running the following code in the Console:\n\n# install packages from CRAN\ninstall.packages(\"tidyverse\")\ninstall.packages(\"janitor\")\ninstall.packages(\"sf\")\n\nOnce our Console returns back to the &gt; symbol and there is no red stop sign in the upper right hand corner of Rstudio, let’s see if the installation worked. Try the following in your console:\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(janitor)\n\n\n\n\n\n\nTip📣 Packages\n\n\n\nWe only need to install packages once per R version, but we need to load packages every session before we can use them with the library() function.\n\n\nIf everything worked, hopefully we’ll see something like below. Don’t worry if the version numbers are slightly different, these can change depending on the operating system and version of R you are using.",
     "crumbs": [
-      "Home"
+      "Modules",
+      "Data Wrangling"
     ]
   },
   {
-    "objectID": "index.html#website",
-    "href": "index.html#website",
-    "title": "Learning R: Workflow vs Wrangling",
-    "section": "Website",
-    "text": "Website\nWebsite and slides, all built in Quarto with RStudio! Styles, Themes, and Layouts adapted/reused from the excellent posit::conf(2024) repo, specifically the Quarto Dashboard Workshop. Some fantastic resources exist that have been invaluable for learning how to put these types of workshops together, thanks to the open, available, and re-useable approach folks have taken. For Quarto Live / WASM, the excellent R Primers site by Andrew Heiss was invaluable.",
+    "objectID": "1-data-wrangling/index.html#getting-help",
+    "href": "1-data-wrangling/index.html#getting-help",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Caution📣 Important Note\n\n\n\nIf you only take one thing away from today, please make sure it is this: there are many, many options to get help from. Part of learning is sifting through, trying, failing, and trying again. Don’t be discouraged if something isn’t working, please reach out and leverage your R community!\n\n\nBeing able to find help and interpret that help is probably one of the most important skills for learning a new language. R is no different. Help on functions and packages can be accessed directly from R, can be found on CRAN and other official R resources, searched on Google, etc.\n\n\nGetting help from the console is straightforward and can be done numerous ways. Try some of the commands below and see what happens in RStudio. When you know the name of a function, use the console and type help(&lt;function&gt;) or ?&lt;function&gt;\n# Using the help command/shortcut\nhelp(\"print\") # Help on the print command\n?print # Help on the print command using the `?` shortcut\n\n# When you know the name of the package\nhelp(package = \"sf\") # Help on the package `dplyr`\n\n\n# Don't know the exact name or just part of it\napropos(\"print\") # Returns all available functions with \"print\" in the name\n\n??print # shortcut, but also searches demos and vignettes in a formatted page\n\nWhile the resources already mentioned are useful, often the quickest way is to just turn to Google (and now LLM).\nHowever, searching for “R” answers straight from Google can be challenging and still requires understanding what the question (or error) actually is. A few tips:\n\nWhen using search engines, always preface the search with “r” or “[R]”\nGet a sense of what sources are reliable\nTake note of the number of hits and date of a web page\nWhen in doubt, search with the exact error message (see here for details about warnings vs errors)\n\n\n\n\n\n\n\nCaution Using LLMs\n\n\n\nUsing tools like ChatGPT can be helpful. Some models are better than others for R, but just a strong caution and general bit of advice.\nMake sure to understand each piece of code that you run when getting suggestions for code from LLMs. Sometimes it will be great, sometimes it will be very wrong, and many times it’s a combination of both.\nLearning to program requires repetition, both in success and in failure, and understanding why something breaks can be much more informative to learning than knowing something just works.",
     "crumbs": [
-      "Home"
+      "Modules",
+      "Data Wrangling"
     ]
   },
   {
-    "objectID": "index.html#content",
-    "href": "index.html#content",
-    "title": "Learning R: Workflow vs Wrangling",
-    "section": "Content",
-    "text": "Content\nContent is largely built and adapted from the CABW 2018 R Training, and influenced by the excellent Carpentries workshops and community, Openscapes resources (including a Water Boards specific program), and the Davis R Users Group and R4WRDS course.\nUltimately, everything is and should be open to all for use, reuse, and learning.",
+    "objectID": "4-tying-it-together/index.html",
+    "href": "4-tying-it-together/index.html",
+    "title": "Tying it Together!",
+    "section": "",
+    "text": "View slides in full screen",
     "crumbs": [
-      "Home"
+      "Modules",
+      "Tying it Together!"
     ]
+  },
+  {
+    "objectID": "4-tying-it-together/index.html#slides",
+    "href": "4-tying-it-together/index.html#slides",
+    "title": "Tying it Together!",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Modules",
+      "Tying it Together!"
+    ]
+  },
+  {
+    "objectID": "4-tying-it-together/index.html#exercises",
+    "href": "4-tying-it-together/index.html#exercises",
+    "title": "Tying it Together!",
+    "section": "Exercises",
+    "text": "Exercises\n\nMaking a Quarto Document your own:\n\nDownload csci-summary.qmd (click on  )\nRender the document\nChange the author to your name and change a color in one of the plots, then re-Render!\nAdd another plot or table, and re-Render!",
+    "crumbs": [
+      "Modules",
+      "Tying it Together!"
+    ]
+  },
+  {
+    "objectID": "getting_started.html",
+    "href": "getting_started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Ideally folks will have a chance to run through this prior to the workshop. It is one of the hurdles to getting going, but it gets easier!",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "getting_started.html#software",
+    "href": "getting_started.html#software",
+    "title": "Getting Started",
+    "section": "Software",
+    "text": "Software\nThe software that we will need is as follows. We recommend installing in this order as well. More detailed instructions can be found at each site, and here, (follow Steps 1 & 2).\n\nR\n\nR\nRStudio\nQuarto\n\n\n\nPackages\nThe next step is to install a few packages, which are libraries of functions (more on these later) that we can use to do different things. We install packages available for all R users from an online repository called CRAN, by pasting the following code into the RStudio Console window and hitting ENTER.\nFor our purposes we will be using a few packages, let’s try to install them now.\n\n# we make a concatenated list of packages\npkg_list &lt;- c(\n  \"tidyverse\", \"janitor\", \"here\", \"sf\", \"tigris\"\n)\n# then install each package in the list\ninstall.packages(pkg_list)",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "getting_started.html#getting-started",
+    "href": "getting_started.html#getting-started",
+    "title": "Getting Started",
+    "section": "Getting Started!",
+    "text": "Getting Started!\nView slides in full screen",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "slides_getting_started.html#section",
+    "href": "slides_getting_started.html#section",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "",
+    "text": "Workshop Intro"
+  },
+  {
+    "objectID": "slides_getting_started.html#logistics",
+    "href": "slides_getting_started.html#logistics",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Logistics",
+    "text": "Logistics\n\n🛜 WiFi credentials:\n\nNetwork: Fill Here\nPassword: unknown\nImportant locations:\n\nBathrooms: fill in"
+  },
+  {
+    "objectID": "slides_getting_started.html#code-of-conduct",
+    "href": "slides_getting_started.html#code-of-conduct",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\n\nEveryone who comes to learn should feel welcome here. We are committed to providing a professional, friendly and safe environment for all participants regardless of gender, sexual orientation, disability, race, ethnicity, religion, national origin or other protected class.\nPlease see a full code of conduct here:\n\n\nhttps://d-rug.github.io/code-of-conduct.html"
+  },
+  {
+    "objectID": "slides_getting_started.html#meet-the-team",
+    "href": "slides_getting_started.html#meet-the-team",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Meet the Team!",
+    "text": "Meet the Team!\n\n\n\nRyan Peek\nSenior Env. Scientist @ CDFW\n\n\nElena Suglia\nEnvironmental Scientist @ California State Water Resources Control Board"
+  },
+  {
+    "objectID": "slides_getting_started.html#meet-your-neighbors",
+    "href": "slides_getting_started.html#meet-your-neighbors",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Meet your Neighbors!",
+    "text": "Meet your Neighbors!\n\n\n\n\nPlease share with the person next to / nearby you…\n\nYour name\nYour professional affiliation and/or where you’re from\nWhat you hope to get out of this workshop\n\n\n  \n    −\n    +\n \n 03:00"
+  },
+  {
+    "objectID": "slides_getting_started.html#workshop-materials",
+    "href": "slides_getting_started.html#workshop-materials",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Workshop materials",
+    "text": "Workshop materials\n\nOne link for all materials\n🔗 pos.it/quarto-dashboards-24"
+  },
+  {
+    "objectID": "slides_getting_started.html#and-theyre-all-made-with",
+    "href": "slides_getting_started.html#and-theyre-all-made-with",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "… and they’re all made with?",
+    "text": "… and they’re all made with?\n\nQuarto!"
+  },
+  {
+    "objectID": "slides_getting_started.html#agenda",
+    "href": "slides_getting_started.html#agenda",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\n\n\n\n\nTime\nActivity\n\n\n\n\n1:00 - 1:50\nWorkshop Introduction  Data Wrangling & Project Workflow\n\n\n~1:50 - 2:00\nTake a break ☕\n\n\n2:00 - 2:50\nAdventures with Bioassessment Data (Exploratory analysis)\n\n\n~2:50 - 3:00\nBrain break 🧠\n\n\n3:00 - 3:50\nMake a Map! 🗺️\n\n\n~3:50 - 4:00\nCoffee break ☕\n\n\n4:00 - 4:30\nTying it Together 🪢"
+  },
+  {
+    "objectID": "slides_getting_started.html#the-sticky-situation",
+    "href": "slides_getting_started.html#the-sticky-situation",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "The Sticky Situation",
+    "text": "The Sticky Situation\n\n\n\n\n\n“I’m lost / need help”\n\n\n\n\n“I’m done and ready to move along”\n👨‍💻 Put your sticky note on the back of your laptop screen 👩‍💻"
+  },
+  {
+    "objectID": "slides_getting_started.html#meeting-you-where-you-are",
+    "href": "slides_getting_started.html#meeting-you-where-you-are",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Meeting you where you are",
+    "text": "Meeting you where you are\n\n\n\nI’ll assume you\n\nhave limited or no R knowlege\nhave worked in Microsoft/Google Spreadsheets\nhave written a report on something\nwant to learn!\n\n\n\n\nI’ll teach you\n\nbasics of a using R\nhow to get unstuck\na framework of tools you can reuse!"
+  },
+  {
+    "objectID": "slides_getting_started.html#workshop-approach",
+    "href": "slides_getting_started.html#workshop-approach",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Workshop approach",
+    "text": "Workshop approach\nWe will use real bioassessment data to demonstrate some general data approaches to using open and reproducible workflows in R to summarizing and plotting data!.\n\n\n Conventions\n\n\n\n\n\n\n\n\n🧰\nAdd this to your toolbox.\n\n\n📣\nImportant announcement typically learned via trial and error…let us save you the pain\n\n\n\nDetour warning. There’s a lot more to talk about here but, but there’s not time today."
+  },
+  {
+    "objectID": "slides_getting_started.html#asking-questions",
+    "href": "slides_getting_started.html#asking-questions",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Asking Questions",
+    "text": "Asking Questions\n\n\n\n\nYou are always welcome to raise your hand! 🙋\n\n\n\n\n\n\nAlso feel free to ask in our shared doc!"
+  },
+  {
+    "objectID": "slides_getting_started.html#getting-help-r-functions",
+    "href": "slides_getting_started.html#getting-help-r-functions",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Getting help (R Functions)",
+    "text": "Getting help (R Functions)\nFunctions are the 🍞 and 🧈 of R programming!\n\n\nIf you want to access any function’s help page:\n# Method 1\nhelp(function_name_here)\n\n# Method 2\n?function_name_here\n\n# Method 3\n# Highlight the function and press F1 🤯"
+  },
+  {
+    "objectID": "slides_getting_started.html#lets-get-muddy",
+    "href": "slides_getting_started.html#lets-get-muddy",
+    "title": "Getting Started with R in Environmental Science",
+    "section": "Let’s get muddy!",
+    "text": "Let’s get muddy!"
   }
 ]

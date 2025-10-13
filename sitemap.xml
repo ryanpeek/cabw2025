@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ryanpeek.github.io/cabw2025/slides_getting_started.html</loc>
-    <lastmod>2025-10-03T21:17:27.495Z</lastmod>
+    <loc>https://ryanpeek.github.io/cabw2025/csci-summary.html</loc>
+    <lastmod>2025-10-10T07:08:44.714Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ryanpeek.github.io/cabw2025/index.html</loc>
+    <lastmod>2025-10-03T21:17:27.493Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ryanpeek.github.io/cabw2025/2-bioadventure/index.html</loc>
+    <lastmod>2025-10-13T06:43:32.368Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ryanpeek.github.io/cabw2025/4-tying-it-together/4-tying-it-together.html</loc>
+    <lastmod>2025-10-08T06:27:32.148Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ryanpeek.github.io/cabw2025/1-data-wrangling/index.html</loc>
+    <lastmod>2025-10-11T05:22:22.408Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ryanpeek.github.io/cabw2025/4-tying-it-together/index.html</loc>
+    <lastmod>2025-10-10T08:34:23.664Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ryanpeek.github.io/cabw2025/3-make-maps/index.html</loc>
+    <lastmod>2025-10-11T05:29:27.622Z</lastmod>
   </url>
   <url>
     <loc>https://ryanpeek.github.io/cabw2025/getting_started.html</loc>
     <lastmod>2025-10-04T07:18:36.105Z</lastmod>
   </url>
   <url>
-    <loc>https://ryanpeek.github.io/cabw2025/3-make-maps/index.html</loc>
-    <lastmod>2025-10-03T21:17:27.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ryanpeek.github.io/cabw2025/4-tying-it-together/index.html</loc>
-    <lastmod>2025-10-03T21:17:27.377Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ryanpeek.github.io/cabw2025/1-data-wrangling/index.html</loc>
-    <lastmod>2025-10-06T19:42:08.252Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ryanpeek.github.io/cabw2025/4-tying-it-together/4-tying-it-together.html</loc>
-    <lastmod>2025-10-03T21:17:27.350Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ryanpeek.github.io/cabw2025/2-bioadventure/index.html</loc>
-    <lastmod>2025-10-03T21:17:27.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ryanpeek.github.io/cabw2025/index.html</loc>
-    <lastmod>2025-10-03T21:17:27.493Z</lastmod>
+    <loc>https://ryanpeek.github.io/cabw2025/slides_getting_started.html</loc>
+    <lastmod>2025-10-03T21:17:27.495Z</lastmod>
   </url>
 </urlset>
