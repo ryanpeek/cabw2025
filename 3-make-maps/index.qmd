@@ -140,3 +140,25 @@ nicemap<-
 nicemap
 ```
 
+
+## `basemaps`
+
+```{webr}
+library(basemaps)
+library(tidyterra)
+
+set_defaults(map_service = "esri", map_type = "world_hillshade")
+ca_base <- basemaps::basemap_terra(st_transform(ca_cnty, 3857))
+
+nicemap<-
+  ggplot() + # set up the framework
+  tidyterra::geom_spatraster_rgb(data=ca_base) + 
+  geom_sf(data = ca_cnty, fill="transparent", color="gray20", lwd=0.2) + # add the state outline using geom_sf
+  geom_sf(data=xy_sf, fill="orange", pch=21, alpha=0.7, size=2)+
+  labs(x="Longitude (WGS84)", y="Latitude", title="Map of Points") + 
+  theme_minimal() # check out the many themes in ggplot!
+nicemap
+
+
+```
+
