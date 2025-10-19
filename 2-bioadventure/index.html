@@ -227,12 +227,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#bind-data" id="toc-bind-data" class="nav-link" data-scroll-target="#bind-data"><code>bind</code> Data</a></li>
   </ul></li>
   <li><a href="#joining" id="toc-joining" class="nav-link" data-scroll-target="#joining">Joining</a></li>
-  <li><a href="#plotting-with-ggplot2" id="toc-plotting-with-ggplot2" class="nav-link" data-scroll-target="#plotting-with-ggplot2">Plotting with <code>ggplot2</code></a>
+  <li><a href="#plotting-with-ggplot2" id="toc-plotting-with-ggplot2" class="nav-link" data-scroll-target="#plotting-with-ggplot2">Plotting with {<code>ggplot2</code>}</a>
   <ul class="collapse">
   <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot"><code>ggplot()</code></a></li>
   <li><a href="#geoms" id="toc-geoms" class="nav-link" data-scroll-target="#geoms"><code>geoms</code></a></li>
   <li><a href="#geom-arguments" id="toc-geom-arguments" class="nav-link" data-scroll-target="#geom-arguments"><code>geom</code> arguments</a></li>
   <li><a href="#a-geom_boxplot" id="toc-a-geom_boxplot" class="nav-link" data-scroll-target="#a-geom_boxplot">A <code>geom_boxplot</code></a></li>
+  </ul></li>
+  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up">Wrapping Up</a>
+  <ul class="collapse">
+  <li><a href="#challenge-questions" id="toc-challenge-questions" class="nav-link" data-scroll-target="#challenge-questions">Challenge Questions</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ryanpeek/cabw2025/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -259,12 +263,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The general approach here can be to join tables (need to update site locations to include the county so as to avoid needing sf and tigris).</p>
-<p>Join tables, summarize by county, find county with highest CSCI scores and county with lowest CSCI scores.</p>
-<p>Generate a quick box plot comparison by county</p>
-<p>Look at trend latitudinally</p>
-<p>Generate summary table of stations to monitor</p>
-<p>Find counties with fewest stations and identify sampling gaps</p>
 <section id="import-our-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-our-data">Import our Data</h2>
 <p>First off we want to import our data so we can use it. For this data adventure, let’s import three pieces, the <code>CSCI</code> values, the <code>ASCI</code> values, and a corresponding latitude &amp; longitude list of our stations. We can then integrate all these pieces.</p>
@@ -299,7 +297,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 </section>
 <section id="selecting-and-filtering" class="level2">
 <h2 class="anchored" data-anchor-id="selecting-and-filtering">Selecting and Filtering</h2>
-<p>A big part of working with data is figuring out how to <code>select</code>, <code>filter</code>, <code>slice</code>,, and <code>summarize</code>our data into the pieces we want. The good news is each of these things is a function in the {dplyr} package, so we can walk through a few examples for each of these <em>verbs</em>.</p>
+<p>A big part of working with data is figuring out how to <code>select</code>, <code>filter</code>, <code>slice</code>,, and <code>summarize</code> our data into the pieces we want. The good news is each of these things is a function in the {<code>dplyr</code>} package, so we can walk through a few examples for each of these <em>verbs</em>.</p>
 <section id="select" class="level3">
 <h3 class="anchored" data-anchor-id="select"><code>select</code></h3>
 <p>We <code>select</code> columns. There are many options we can use to select the columns we want. Here are a few options, but there are many! Remember, we need to have loaded our <code>dplyr</code> package first.</p>
@@ -313,7 +311,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>One difficult thing to be aware of in R is when and where we use quotation marks. For the most part, calling column names in dplyr does **Not* require quoting. However, if we are using specific values, these typically need to be “quoted”. Stay tuned for more!</p>
+<p>One difficult thing to be aware of in R is when and where we use quotation marks. For the most part, calling column names in <code>dplyr</code> does <strong>Not</strong> require quoting. However, if we are using specific values, these typically need to be “quoted”. Stay tuned for more!</p>
 </div>
 </div>
 <div class="cell">
@@ -505,7 +503,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 <h2 class="anchored" data-anchor-id="joining">Joining</h2>
 <p>Combining data is a common task of data wrangling. All joins require that each of the tables can be linked by some shared identifier or <strong><em>key</em></strong> columns. These are usually represented as columns that are unique for each observations. Our example datasets include the <code>StationID</code> or <code>SampleID</code> columns that represent unique identifiers of the station, sample date, and/or replicate.</p>
 <p>The challenge with joins is that the two datasets may not represent the same observations for a given key. For example, you might have one table with all observations for every key, another with only some observations, or two tables with only a few shared keys. What you get back from a join will depend on what’s shared between tables, in addition to the type of join you use.</p>
-<p>For our data, we’ll be using an <strong><code>inner_join</code></strong> that combines datasets by shared keys ( <i class="fa-solid fa-arrows-turn-right" aria-label="arrows-turn-right"></i> <em>for an overview of the other types of joins, see</em> <a href="https://r4ds.had.co.nz/relational-data.html#mutating-joins">R4DS lesson here</a>).</p>
+<p>For our data, we’ll be using an <strong><code>inner_join</code></strong> that combines datasets by shared keys ( <i class="fa-solid fa-arrows-turn-right" aria-label="arrows-turn-right"></i> <span style="color:orange;">for an overview of the other types of joins, see <a href="https://r4ds.had.co.nz/relational-data.html#mutating-joins">R4DS lesson here</a> </span>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/inner-join.gif" class="img-fluid figure-img"></p>
@@ -528,7 +526,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 <p>It is always important to bear in mind what type of join we are using, understand and inspect the results, and check that against expectations of what we think we should get back. The computer will only do what we tell it, for better or worse!</p>
 </section>
 <section id="plotting-with-ggplot2" class="level2">
-<h2 class="anchored" data-anchor-id="plotting-with-ggplot2">Plotting with <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a></h2>
+<h2 class="anchored" data-anchor-id="plotting-with-ggplot2">Plotting with <a href="https://ggplot2.tidyverse.org/">{<code>ggplot2</code>}</a></h2>
 <p>The entire workflow of data exploration often hinges on looking at your data, whether you’re exploring a dataset for the first time or creating publication-ready figures. Visualizing your data is important to provide insight into patterns, and opens the door to asking different questions.</p>
 <p>R is an amazing system for visualizing data, and we can only scratch the surface! We will introduce some of the core concepts and structure of the popular {<code>ggplot2</code>} package. Based on what is known as the <strong>g</strong>rammar of <strong>g</strong>raphics, designed to make thinking, reasoning, and communicating about graphs easier by following a few simple rules. Like learning to write a sentence, the grammar of building a graph also must start with a standardized foundation that can be used for building more complex visualizations.</p>
 <section id="ggplot" class="level3">
@@ -641,6 +639,37 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="wrapping-up" class="level2">
+<h2 class="anchored" data-anchor-id="wrapping-up">Wrapping Up</h2>
+<p>So much can be done using a set of standardized tools. Learning to wield these tools across most any dataset takes time, but each time gets easier.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>📣 Things to keep in mind:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Always keep in mind how data fits together, and what columns can be used to join data</li>
+<li>Don’t be afraid to make summary tables, and visualize. your data early and often!</li>
+<li>Quick comparisons can be a great way to QA/QC data, and make sure data meets expectations.</li>
+</ul>
+</div>
+</div>
+<section id="challenge-questions" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-questions">Challenge Questions</h3>
+<p>Try some of these questions on your own:</p>
+<ol type="1">
+<li><p>If you wanted to make a map of the 10 stations with the top 10 CSCI and ASCI scores, you would need a table of the <code>StationID</code>, <code>Lat</code>, <code>Lon</code>, and scores for <code>CSCI</code> and <code>ASCI</code>. How could you go about this?</p></li>
+<li><p>If you wanted a boxplot of the average ASCI score by county, but including the <code>site_type</code> in the boxplot, how would you do it?</p></li>
+<li><p>If you wanted to assess if there were any latitudinal trends in <code>ASCI</code> or <code>CSCI</code>, what sort of plot could you make?</p></li>
+<li><p>Can you identify which counties have the fewest stations to help identify sampling gaps?</p></li>
+</ol>
 
 
 <script type="webr-data">
