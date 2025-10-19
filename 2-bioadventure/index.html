@@ -79,6 +79,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-e0be8454142f447c83979c8b2ec9749a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -377,7 +379,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>📣 Chaining or Piping (<code>%&gt;%</code> or <code>|&gt;</code>)
+<span class="screen-reader-only">Tip</span>🧰 Chaining or Piping (<code>%&gt;%</code> or <code>|&gt;</code>)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -415,7 +417,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 </script>
 </div>
 </div>
-<p>Another great tool is the <code>{janitor}</code> package. We can use a number of functions in janitor, but most commonly I use it to clean all the column names.</p>
+<p>🧰 Another great tool is the <code>{janitor}</code> package. We can use a number of functions in janitor, but most commonly I use it to clean all the column names.</p>
 <div class="cell">
 <div>
 <div id="webr-9" class="exercise-cell">
@@ -503,7 +505,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 <h2 class="anchored" data-anchor-id="joining">Joining</h2>
 <p>Combining data is a common task of data wrangling. All joins require that each of the tables can be linked by some shared identifier or <strong><em>key</em></strong> columns. These are usually represented as columns that are unique for each observations. Our example datasets include the <code>StationID</code> or <code>SampleID</code> columns that represent unique identifiers of the station, sample date, and/or replicate.</p>
 <p>The challenge with joins is that the two datasets may not represent the same observations for a given key. For example, you might have one table with all observations for every key, another with only some observations, or two tables with only a few shared keys. What you get back from a join will depend on what’s shared between tables, in addition to the type of join you use.</p>
-<p>For our data, we’ll be using an <strong><code>inner_join</code></strong> that combines datasets by shared keys (for an overview of the other types of joins, see <a href="https://r4ds.had.co.nz/relational-data.html#mutating-joins">R4DS lesson here</a>.</p>
+<p>For our data, we’ll be using an <strong><code>inner_join</code></strong> that combines datasets by shared keys ( <i class="fa-solid fa-arrows-turn-right" aria-label="arrows-turn-right"></i> <em>for an overview of the other types of joins, see</em> <a href="https://r4ds.had.co.nz/relational-data.html#mutating-joins">R4DS lesson here</a>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/inner-join.gif" class="img-fluid figure-img"></p>
@@ -546,7 +548,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImVkaXRvci1mb250LXNjYWxlIjoiMC44IiwiZXZhbCI6dHJ1ZSwi
 <section id="geoms" class="level3">
 <h3 class="anchored" data-anchor-id="geoms"><a href="https://ggplot2.tidyverse.org/reference/index.html#geoms"><code>geoms</code></a></h3>
 <p>Once we have added the foundation, we then can build the figure we want, layer by layer. These are typically <code>geoms</code> or geometries that correspond with a type of visualization. For example, the function <code>geom_point()</code> adds a layer of points to your plot, which creates a scatterplot. {<code>ggplot2</code>} comes with <strong><em>many</em></strong> <a href="https://ggplot2.tidyverse.org/reference/index.html#geoms"><code>geom</code></a> functions that each add a different type of layer to a plot.</p>
-<p><strong>One important difference to be aware of, layers in <code>ggplot</code> are added using a <code>+</code>, not a pipe!</strong></p>
+<p><strong>📣 One important difference to be aware of, layers in <code>ggplot</code> are added using a <code>+</code>, not a pipe!</strong></p>
 </section>
 <section id="geom-arguments" class="level3">
 <h3 class="anchored" data-anchor-id="geom-arguments"><code>geom</code> arguments</h3>
