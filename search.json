@@ -488,6 +488,116 @@
     ]
   },
   {
+    "objectID": "3-make-maps/index.html",
+    "href": "3-make-maps/index.html",
+    "title": "Make Maps",
+    "section": "",
+    "text": "We will use the following in this tutorial:\nlibrary(dplyr)\nlibrary(sf)\nlibrary(mapview)\nlibrary(ggplot2)\nlibrary(ggspatial)\nlibrary(tigris)\nLet’s take the same data and learn how to explore/make a few simple maps. There are some excellent spatial resources in the R universe, so we are only going to show a few basics. For more, definitely check out these spatial/mapping resources:\n\nGeocomputation with R\nSpatial Data Science\nSpatial Statistics with R\nMethods for comparing spatial patterns in raster data",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#load-libraries",
+    "href": "3-make-maps/index.html#load-libraries",
+    "title": "Make Maps",
+    "section": "",
+    "text": "We will use the following in this tutorial:\nlibrary(dplyr)\nlibrary(sf)\nlibrary(mapview)\nlibrary(ggplot2)\nlibrary(ggspatial)\nlibrary(tigris)\nLet’s take the same data and learn how to explore/make a few simple maps. There are some excellent spatial resources in the R universe, so we are only going to show a few basics. For more, definitely check out these spatial/mapping resources:\n\nGeocomputation with R\nSpatial Data Science\nSpatial Statistics with R\nMethods for comparing spatial patterns in raster data",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#import-the-data",
+    "href": "3-make-maps/index.html#import-the-data",
+    "title": "Make Maps",
+    "section": "Import the Data",
+    "text": "Import the Data\nUse the same dataset we’ve been working with in previous lessons. If you are playing along at home, make sure to install/load libraries above.",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#make-data-spatial",
+    "href": "3-make-maps/index.html#make-data-spatial",
+    "title": "Make Maps",
+    "section": "Make Data Spatial",
+    "text": "Make Data Spatial\nNow we have data, which as a spatial component. That is, we can use the latitude and longitude columns to map our data. This could be done by simply plotting points with x and y as latitude and longitude, however, if we wanted to do spatial analysis, or utilize the myriad of spatial mapping options in R, we need these data to have a spatial format. For vector (points, lines, polygons) data, the most stable and easiest option is to use the {sf} package and create a simple features data frame. Let’s do that after we talk about projections!\n\nProjections/Transformations\nSpatial data is tricky, because different parts of the world work in different “datum” or “projections”. One way to describe how these projections work is to imagine draping a square tablecloth over a round ball (Earth). The tablecloth isn’t quite big enough to cover the whole globe, so near the edges of the tablecloth there’s stretching or wrinkling of your square. At the center of the tablecloth there’s very little stretching, and that’s the most accurate spot from a spatial perspective. When working with spatial data, we want a projection that is going to give us the least amount of stretching for the location/region we’re working in.\nA few common projections used in California for state/federal work:\n\nNAD83 California Albers: EPSG 3310\nNAD83 California Teal Albers Equal Area: EPSG 102600\nWGS84 Lat Lon: EPSG 4326\n\n\n\nConvert to {sf}\nTo leverage all the spatial power R provides, we will use the {sf} package, which provides a full suite of functionality for spatial analysis of vector data. We need to use st_as_sf() to convert our data frame to a simple feature (spatial) object. As part of that we need to specify the coordinate reference system (crs=) and coords columns.\nIf all goes well, we should end up with a new geometry column, which contains our projected spatial data in a single column. This applies to point, line, or polygon data, there will always be one geometry column with the spatial information. And it will stick with the data!\n\n\n\n{sf} “sticky” geometry columns remain with the data! Art by Allison Horst\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip📣 Raster Data\n\n\n\nWe simply don’t have time to cover all the things, but if you work with raster data, the best recommended all-in-one package to use is {terra}.",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#simple-map",
+    "href": "3-make-maps/index.html#simple-map",
+    "title": "Make Maps",
+    "section": "Simple Map",
+    "text": "Simple Map\nWe can start by using the plot() function. Here we are actually using a modified plot() function from the {sf} package, to handle the spatial data.",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#interactive-maps",
+    "href": "3-make-maps/index.html#interactive-maps",
+    "title": "Make Maps",
+    "section": "Interactive Maps",
+    "text": "Interactive Maps\nAnother amazing tool to add to the repertoire is the {mapview} package. It’s very easy to use, and is a great option for exploring your data. Make sure we have installed and loaded the package, and then give it a try.",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#ggplot-maps",
+    "href": "3-make-maps/index.html#ggplot-maps",
+    "title": "Make Maps",
+    "section": "ggplot Maps",
+    "text": "ggplot Maps\nWe’ve used {ggplot2} in the previous lessons, here we build it out a bit more and add a our spatial data. Great news, we can use geom_sf() to plot any {sf} data in our ggplot!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip📣 Why no aes()?\n\n\n\ngeom_sf() automatically detects and uses the geometry column in the {sf} class data frame. So we don’t need to specify an x or y. However, we can certainly map different variables to other aes() options, like aes(fill=NAME) to map a unique color to each CA county name!",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#getting-boundaries",
+    "href": "3-make-maps/index.html#getting-boundaries",
+    "title": "Make Maps",
+    "section": "Getting Boundaries",
+    "text": "Getting Boundaries\nA great part of maps it having some easy boundaries or delineations that help locate your site or location. One great option is the {tigris}, which allows users to directly download and use TIGER/Line shapefiles from the US Census Bureau. This includes roads, counties, states and more. Let’s download county boundaries for California and use them in our map.\n\n# get counties in CA\nca_cnty &lt;- tigris::counties(state=\"CA\", progress_bar=FALSE)\n\n# what projection are they in?\nsf::st_crs(ca_cnty)\n\n# what projection was our xy_sf data in?\n\nNow we can plug this straight into our ggplot map from before. note, the order we add the layers into ggplot matters. Try changing them around to see what things look like!\n\nnicemap_w_cnty &lt;-\n  ggplot() + # set up the framework\n  # add our county outlines as the base\n  geom_sf(data = ca_cnty, color=\"gray20\", lwd=0.2) + \n  geom_sf(data=xy_sf, fill=\"orange\", pch=21, alpha=0.7, size=2)+\n  labs(x=\"Longitude (WGS84)\", y=\"Latitude\", title=\"Map of Points\", subtitle=\"Improved with Californa Counties now!\") + \n  theme_minimal() # check out the many themes in ggplot!\n\nnicemap_w_cnty\n\n\n\n\nFancy map with county boundaries.",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#adding-north-arrow-scale-bars",
+    "href": "3-make-maps/index.html#adding-north-arrow-scale-bars",
+    "title": "Make Maps",
+    "section": "Adding North Arrow & Scale Bars",
+    "text": "Adding North Arrow & Scale Bars\nA common bit of polish on a map to make it publication ready is to include a scale bar and north arrow or compass. The {ggspatial} package makes this easy in ggplot. Let’s build on our fancy map.\n\nnicemap_w_scales &lt;-\n  ggplot() + \n  geom_sf(data = ca_cnty, color=\"gray20\", lwd=0.2) + \n  geom_sf(data=xy_sf, fill=\"orange\", pch=21, alpha=0.7, size=2)+\n  labs(x=\"Longitude (WGS84)\", y=\"Latitude\", title=\"Map of Points\", subtitle=\"Improved with scale and N arrow!\") + \n  theme_minimal() +\n  ggspatial::annotation_north_arrow(location = \"tr\") +\n  ggspatial::annotation_scale(location = \"bl\")\n\nnicemap_w_scales\n\n\n\n\nFancy map with scale bar and North arrow.",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
+    "objectID": "3-make-maps/index.html#basemaps",
+    "href": "3-make-maps/index.html#basemaps",
+    "title": "Make Maps",
+    "section": "basemaps",
+    "text": "basemaps\nFinally, one of the cool options to make your map really shine, is adding a basemap. This does require some extra work, but adding code here so you can see how it’s done for a future map! Notice here we need to leverage a few packages we haven’t used yet, including {basemaps}, {terra}, and {tidyterra}. I’ve found this approach is most stable across platforms, but does require a little extra work to get it “map-ready”.\n\nlibrary(basemaps)\nlibrary(terra)\nlibrary(tidyterra)\n\n# set the default map type...there are many!\nset_defaults(map_service = \"esri\", map_type = \"world_hillshade\")\n# note we need to transform to this projection for ease of use\nca_base &lt;- basemaps::basemap_terra(st_transform(ca_cnty, 3857))\n\nLoading basemap 'world_hillshade' from map service 'esri'...\n\n# now plot\nnice_basemap&lt;-\n  ggplot() + \n  # add the base map first! we can change alpha here too\n  tidyterra::geom_spatraster_rgb(data=ca_base) + \n  # now county layer\n  geom_sf(data = ca_cnty, fill=\"transparent\", color=\"gray20\", lwd=0.2) + \n  # now points\n  geom_sf(data=xy_sf, fill=\"orange\", pch=21, alpha=0.7, size=2)+\n  labs(x=\"Longitude (WGS84)\", y=\"Latitude\", title=\"Map of Points\") + \n  theme_minimal()\n\nnice_basemap\n\n\n\n\nBase map with scale bar and North arrow.\n\n\n\n\nThat’s a lot of options! Hope you give some a try and once you make one map, it’s tons of fun to make more!",
+    "crumbs": [
+      "Modules",
+      "Make Maps"
+    ]
+  },
+  {
     "objectID": "getting_started.html",
     "href": "getting_started.html",
     "title": "Getting Started",
