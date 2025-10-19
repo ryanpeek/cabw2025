@@ -38,13 +38,13 @@ Workshop Intro
 
 🛜 WiFi credentials:
 
--   Network: `Fill Here`
+-   Network:  `_____`
 
--   Password: `unknown`
+-   Password: `_____`
 
 -   Important locations:
 
-    -   **Bathrooms**: fill in
+    -   **Bathrooms**: _____
 
 ## Code of Conduct {.content-light}
 
@@ -68,7 +68,7 @@ https://d-rug.github.io/code-of-conduct.html
 :::
 
 ::: {.column width="44%"}
-![](http://www.elenasuglia.com/uploads/1/1/0/8/110898395/published/dsc06047.jpg){.hello-image}
+![](images/dsc06047.jpg){.hello-image}
 
 [**Elena Suglia**]{.teal}
 
@@ -102,9 +102,13 @@ Please share with the person next to / nearby you…
 ## Workshop materials {.nostretch}
 
 ::: {style="text-align: center;"}
-One link for all materials
 
-🔗 [pos.it/quarto-dashboards-24](https://pos.it/quarto-dashboards-24)
+All in github repository:
+
+ - 🔗 [data](https://github.com/ryanpeek/cabw2025/tree/main/data)
+
+ - 🔗 [course quarto repo](https://github.com/ryanpeek/cabw2025/)
+
 :::
 
 

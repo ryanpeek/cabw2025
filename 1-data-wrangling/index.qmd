@@ -148,7 +148,7 @@ head(cscidat)
 
 
 ::: {.callout-caution}
-## 📣 Data frame constraints
+## 🧰 Data frame constraints
 
 In R, the only constraints required to make a data frame are:
 
@@ -188,7 +188,7 @@ library(janitor)
 ```
 
 ::: {.callout-tip}
-##  📣 Packages
+##  🧰 Packages
 
 We only need to install packages once per R version, but we need to **load** packages every session before we can use them with the `library()` function.
 

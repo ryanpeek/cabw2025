@@ -145,7 +145,7 @@ select(filt_3, New_Lat, CSCI) |> summary()
 ```
 
 ::: {.callout-tip}
-## 📣 Chaining or Piping (`%>%` or `|>`)
+## 🧰 Chaining or Piping (`%>%` or `|>`)
 
 We can chain code together by using a pipe argument (`%>%` or `|>`). These can be viewed as passing whatever is coming from the left side, on to the right side. Think of this as doing an operation on an object, pass to the pipe (`|>`) **and then** doing another operation. 
 
@@ -182,7 +182,7 @@ cscidat_lower <- rename(cscidat,
 names(cscidat_lower)
 ```
 
-Another great tool is the `{janitor}` package. We can use a number of functions in janitor, but most commonly I use it to clean all the column names. 
+🧰 Another great tool is the `{janitor}` package. We can use a number of functions in janitor, but most commonly I use it to clean all the column names. 
 
 ```{webr}
 # rename all columns with janitor
@@ -275,7 +275,7 @@ Combining data is a common task of data wrangling. All joins require that each o
 
 The challenge with joins is that the two datasets may not represent the same observations for a given key. For example, you might have one table with all observations for every key, another with only some observations, or two tables with only a few shared keys. What you get back from a join will depend on what’s shared between tables, in addition to the type of join you use.
 
-For our data, we’ll be using an **`inner_join`** that combines datasets by shared keys (for an overview of the other types of joins, see [R4DS lesson here](https://r4ds.had.co.nz/relational-data.html#mutating-joins).
+For our data, we’ll be using an **`inner_join`** that combines datasets by shared keys ( {{<  fa arrows-turn-right >}} *for an overview of the other types of joins, see* [R4DS lesson here](https://r4ds.had.co.nz/relational-data.html#mutating-joins)).
 
 ![Figures by Garrick Adenbuie, see [here for more](https://www.garrickadenbuie.com/project/tidyexplain/)](https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/inner-join.gif)
 
@@ -325,7 +325,7 @@ ggplot(data = all_data)
 
 Once we have added the foundation, we then can build the figure we want, layer by layer. These are typically `geoms` or geometries that correspond with a type of visualization. For example, the function `geom_point()` adds a layer of points to your plot, which creates a scatterplot. {`ggplot2`} comes with **_many_** [`geom`](https://ggplot2.tidyverse.org/reference/index.html#geoms) functions that each add a different type of layer to a plot. 
 
-**One important difference to be aware of, layers in `ggplot` are added using a `+`, not a pipe!**
+**📣 One important difference to be aware of, layers in `ggplot` are added using a `+`, not a pipe!**
 
 ### `geom` arguments
 
