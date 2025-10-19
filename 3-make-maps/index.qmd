@@ -1,7 +1,9 @@
 ---
 title: Make Maps
 engine: knitr
-format: live-html
+format:   
+  live-html:
+    toc: true
 webr:
   render-df: gt-interactive
   packages:

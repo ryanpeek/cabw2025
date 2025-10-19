@@ -183,8 +183,8 @@ Once our Console returns back to the `>` symbol and there is no red stop sign in
 
 ```
 library(tidyverse)
-library(sf)
 library(janitor)
+library(sf)
 ```
 
 ::: {.callout-tip}

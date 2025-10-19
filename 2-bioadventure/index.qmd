@@ -23,19 +23,6 @@ editor_options:
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
-
-The general approach here can be to join tables (need to update site locations to include the county so as to avoid needing sf and tigris).
-
-Join tables, summarize by county, find county with highest CSCI scores and county with lowest CSCI scores.
-
-Generate a quick box plot comparison by county
-
-Look at trend latitudinally 
-
-Generate summary table of stations to monitor
-
-Find counties with fewest stations and identify sampling gaps
-
 ## Import our Data
 
 First off we want to import our data so we can use it. For this data adventure, let's import three pieces, the `CSCI` values, the `ASCI` values, and a corresponding latitude & longitude list of our stations. We can then integrate all these pieces.
@@ -74,7 +61,7 @@ glimpse(latlons)
 
 ## Selecting and Filtering
 
-A big part of working with data is figuring out how to  `select`, `filter`, `slice`,, and `summarize`our data into the pieces we want. The good news is each of these things is a function in the {dplyr} package, so we can walk through a few examples for each of these *verbs*.
+A big part of working with data is figuring out how to  `select`, `filter`, `slice`,, and `summarize` our data into the pieces we want. The good news is each of these things is a function in the {`dplyr`} package, so we can walk through a few examples for each of these *verbs*.
 
 ### `select`
 
@@ -83,7 +70,7 @@ We `select` columns. There are many options we can use to select the columns we 
 ::: {.callout-tip}
 ## 📣 To "Quote" or not to Quote
 
-One difficult thing to be aware of in R is when and where we use quotation marks. For the most part, calling column names in dplyr does **Not* require quoting. However, if we are using specific values, these typically need to be "quoted". Stay tuned for more!
+One difficult thing to be aware of in R is when and where we use quotation marks. For the most part, calling column names in `dplyr` does **Not** require quoting. However, if we are using specific values, these typically need to be "quoted". Stay tuned for more!
 
 :::
 
@@ -275,7 +262,7 @@ Combining data is a common task of data wrangling. All joins require that each o
 
 The challenge with joins is that the two datasets may not represent the same observations for a given key. For example, you might have one table with all observations for every key, another with only some observations, or two tables with only a few shared keys. What you get back from a join will depend on what’s shared between tables, in addition to the type of join you use.
 
-For our data, we’ll be using an **`inner_join`** that combines datasets by shared keys ( {{<  fa arrows-turn-right >}} *for an overview of the other types of joins, see* [R4DS lesson here](https://r4ds.had.co.nz/relational-data.html#mutating-joins)).
+For our data, we’ll be using an **`inner_join`** that combines datasets by shared keys ( {{<  fa arrows-turn-right >}} <span style="color:orange;">for an overview of the other types of joins, see [R4DS lesson here](https://r4ds.had.co.nz/relational-data.html#mutating-joins) </span>).
 
 ![Figures by Garrick Adenbuie, see [here for more](https://www.garrickadenbuie.com/project/tidyexplain/)](https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/inner-join.gif)
 
@@ -305,7 +292,7 @@ Note, for columns with the exact same name, we don't need the `=` to define for 
 
 It is always important to bear in mind what type of join we are using, understand and inspect the results, and check that against expectations of what we think we should get back. The computer will only do what we tell it, for better or worse!
 
-## Plotting with [`ggplot2`](https://ggplot2.tidyverse.org/)
+## Plotting with [{`ggplot2`}](https://ggplot2.tidyverse.org/)
 
 The entire workflow of data exploration often hinges on looking at your data, whether you’re exploring a dataset for the first time or creating publication-ready figures. Visualizing your data is important to provide insight into patterns, and opens the door to asking different questions.
 
@@ -405,3 +392,29 @@ filter(!is.na(site_type), !is.na(CSCI))) + #<2>
 :::
 
 ::::
+
+
+## Wrapping Up
+
+So much can be done using a set of standardized tools. Learning to wield these tools across most any dataset takes time, but each time gets easier. 
+
+::: {.callout-tip}
+## 📣 Things to keep in mind:
+
+ - Always keep in mind how data fits together, and what columns can be used to join data
+ - Don't be afraid to make summary tables, and visualize. your data early and often!
+ - Quick comparisons can be a great way to QA/QC data, and make sure data meets expectations.
+
+:::
+
+### Challenge Questions
+
+Try some of these questions on your own:
+
+1. If you wanted to make a map of the 10 stations with the top 10 CSCI and ASCI scores, you would need a table of the `StationID`, `Lat`, `Lon`, and scores for `CSCI` and `ASCI`. How could you go about this?
+
+2. If you wanted a boxplot of the average ASCI score by county, but including the `site_type` in the boxplot, how would you do it?
+
+3. If you wanted to assess if there were any latitudinal trends in `ASCI` or `CSCI`, what sort of plot could you make? 
+
+4. Can you identify which counties have the fewest stations to help identify sampling gaps?
