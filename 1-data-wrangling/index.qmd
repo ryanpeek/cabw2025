@@ -1,8 +1,9 @@
 ---
 title: Data Wrangling
 engine: knitr
-format: live-html
-toc: true
+format: 
+  live-html:
+    toc: true
 webr:
   render-df: gt-interactive
   packages:

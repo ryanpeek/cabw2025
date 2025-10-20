@@ -3,7 +3,7 @@ title: Bioassessment Data Adventure
 engine: knitr
 format: 
   live-html:
-      toc: true
+    toc: true
 webr:
   render-df: gt-interactive
   packages:
