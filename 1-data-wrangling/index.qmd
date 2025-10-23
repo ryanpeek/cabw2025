@@ -26,9 +26,9 @@ There are many ways to learn R, but one of the best ways is to jump right in wit
 
 ## Data Background 
 
-The data set we are using is a subset of the California Stream Condition Index (CSCI) and the Algal Stream Condition Index (ASCI). These data represent a portion of the sampling sites that were used to develop each index. The CSCI is based on the comparison of the observed assemblage of benthic macroinvertebrate species to those expected from studying reference streams. It provides a scientifically robust way of assessing and describing conditions and tracking conditions over time or in response to regulatory or restoration actions. Theses indices are built on a few main components:
+The data set we are using is a subset of the California Stream Condition Index (CSCI) and the Algal Stream Condition Index (ASCI). These data represent a portion of the sampling sites that were used to develop each index. The CSCI is based on the comparison of the observed assemblage of benthic macroinvertebrate species to those expected from studying reference streams. It provides a scientifically robust way of assessing and describing conditions and tracking conditions over time or in response to regulatory or restoration actions. These indices are built on a few main components:
 
- - Ratio of observed to expected taxanomic groups (`OE`) 
+ - Ratio of observed to expected taxonomic groups (`OE`) 
  - Proportion of the assemblage that falls into different functional groups that represent species diversity, ecosystem function, and sensitivity to stress.
 
 ::: {.column-margin}
@@ -221,7 +221,7 @@ help("print") # Help on the print command
 ?print # Help on the print command using the `?` shortcut
 
 # When you know the name of the package
-help(package = "sf") # Help on the package `dplyr`
+help(package = "dplyr") # Help on the package `dplyr`
 
 
 # Don't know the exact name or just part of it
