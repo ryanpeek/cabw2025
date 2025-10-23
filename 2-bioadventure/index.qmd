@@ -61,7 +61,7 @@ glimpse(latlons)
 
 ## Selecting and Filtering
 
-A big part of working with data is figuring out how to  `select`, `filter`, `slice`,, and `summarize` our data into the pieces we want. The good news is each of these things is a function in the {`dplyr`} package, so we can walk through a few examples for each of these *verbs*.
+A big part of working with data is figuring out how to  `select`, `filter`, `slice`, and `summarize` our data into the pieces we want. The good news is each of these things is a function in the {`dplyr`} package, so we can walk through a few examples for each of these *verbs*.
 
 ### `select`
 
