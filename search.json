@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Learning R: Workflow vs Wrangling",
     "section": "",
-    "text": "🗓 Oct 29, 2025\n🕘 1 pm - 5 pm",
+    "text": "🗓 Oct 29, 2025\n🕘 1:30 pm - 5 pm",
     "crumbs": [
       "Home"
     ]
@@ -49,7 +49,7 @@
     "href": "index.html#date-location",
     "title": "Learning R: Workflow vs Wrangling",
     "section": "",
-    "text": "🗓 Oct 29, 2025\n🕘 1 pm - 5 pm",
+    "text": "🗓 Oct 29, 2025\n🕘 1:30 pm - 5 pm",
     "crumbs": [
       "Home"
     ]
@@ -69,7 +69,7 @@
     "href": "index.html#schedule",
     "title": "Learning R: Workflow vs Wrangling",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n01:00 - 01:15\nGetting Started\n\n\n01:15 - 01:50\nData Wrangling & Project Workflow\n\n\n01:50 - 02:00\n☕ Take a break ☕\n\n\n02:00 - 02:50\nAdventures with Bioassessment Data\n\n\n02:50 - 03:00\n🧠 Brain break! 🧠\n\n\n03:00 - 03:50\nMake a Map! 🗺️\n\n\n03:50 - 04:00\n☕ Coffee break ☕\n\n\n04:00 - 04:30\nTying it Together 🪢\n\n\n04:30 - 05:00\nQ & A 🤨📚",
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n01:30 - 01:45\nGetting Started\n\n\n01:45 - 02:20\nData Wrangling & Project Workflow\n\n\n02:20 - 02:30\n☕ Take a break ☕\n\n\n02:30 - 03:20\nAdventures with Bioassessment Data\n\n\n03:20 - 03:30\n🧠 Brain break! 🧠\n\n\n03:30 - 04:20\nMake a Map! 🗺️\n\n\n04:20 - 04:30\n☕ Coffee break ☕\n\n\n04:30 - 04:45\nTying it Together 🪢\n\n\n04:45 - 05:00\nQ & A 🤨📚",
     "crumbs": [
       "Home"
     ]
@@ -692,7 +692,7 @@
     "href": "slides_getting_started.html#agenda",
     "title": "Getting Started with R in Environmental Science",
     "section": "Agenda",
-    "text": "Agenda\n\n\n\n\n\n\n\nTime\nActivity\n\n\n\n\n1:00 - 1:50\nWorkshop Introduction  Data Wrangling & Project Workflow\n\n\n~1:50 - 2:00\nTake a break ☕\n\n\n2:00 - 2:50\nAdventures with Bioassessment Data (Exploratory analysis)\n\n\n~2:50 - 3:00\nBrain break 🧠\n\n\n3:00 - 3:50\nMake a Map! 🗺️\n\n\n~3:50 - 4:00\nCoffee break ☕\n\n\n4:00 - 4:30\nTying it Together 🪢"
+    "text": "Agenda\n\n\n\n\n\n\n\nTime\nActivity\n\n\n\n\n1:30 - 2:20\nWorkshop Introduction  Data Wrangling & Project Workflow\n\n\n~2:20 - 2:30\nTake a break ☕\n\n\n2:30 - 3:20\nAdventures with Bioassessment Data (Exploratory analysis)\n\n\n~3:20 - 3:30\nBrain break 🧠\n\n\n3:30 - 4:20\nMake a Map! 🗺️\n\n\n~4:20 - 4:30\nCoffee break ☕\n\n\n4:30 - 5:00\nTying it Together 🪢"
   },
   {
     "objectID": "slides_getting_started.html#the-sticky-situation",
