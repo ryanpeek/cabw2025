@@ -250,7 +250,7 @@ nicemap_w_scales
 
 ## `basemaps`
 
-Finally, one of the cool options to make your map really shine, is adding a basemap. This does require some extra work, but adding code here so you can see how it's done for a future map! Notice here we need to leverage a few packages we haven't used yet, including {basemaps}, {terra}, and {tidyterra}. I've found this approach is most stable across platforms, but does require a little extra work to get it "map-ready".
+Finally, one of the cool options to make your map really shine, is adding a basemap. This does require some extra work, but adding code here so you can see how it's done for a future map! Notice here we need to leverage a few packages we haven't used yet, including `{basemaps}`, `{terra}`, and `{tidyterra}`. I've found this approach is most stable across platforms, but does require a little extra work to get it "map-ready".
 
 ```{r}
 #| eval: true
