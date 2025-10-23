@@ -122,13 +122,13 @@ Quarto!
 
 | Time | Activity |
 |:---|:---|
-| 1:00 - 1:50 | Workshop Introduction <br> Data Wrangling & Project Workflow |
-| \~1:50 - 2:00 | *Take a break* ☕ |
-| 2:00 - 2:50 | Adventures with Bioassessment Data (Exploratory analysis) |
-| \~2:50 - 3:00 | *Brain break* 🧠 |
-| 3:00 - 3:50 | Make a Map! 🗺️ |
-| \~3:50 - 4:00 | *Coffee break* ☕ |
-| 4:00 - 4:30 | Tying it Together 🪢 |
+| 1:30 - 2:20 | Workshop Introduction <br> Data Wrangling & Project Workflow |
+| \~2:20 - 2:30 | *Take a break* ☕ |
+| 2:30 - 3:20 | Adventures with Bioassessment Data (Exploratory analysis) |
+| \~3:20 - 3:30 | *Brain break* 🧠 |
+| 3:30 - 4:20 | Make a Map! 🗺️ |
+| \~4:20 - 4:30 | *Coffee break* ☕ |
+| 4:30 - 5:00 | Tying it Together 🪢 |
 
 ## The Sticky Situation
 

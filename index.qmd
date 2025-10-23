@@ -7,7 +7,7 @@ subtitle: "CABW 2025"
 
 🗓 Oct 29, 2025
 
-🕘 1 pm - 5 pm
+🕘 1:30 pm - 5 pm
 
 ## Overview
 
@@ -31,15 +31,15 @@ This course is for you if you:
 
 | Time          | Activity                                                  |
 |:--------------|:----------------------------------------------------------|
-| 01:00 - 01:15 | [Getting Started](getting_started)                        |
-| 01:15 - 01:50 | [Data Wrangling & Project Workflow](1-data-wrangling/)    |
-| 01:50 - 02:00 | ☕ *Take a break* ☕                                        |
-| 02:00 - 02:50 | [Adventures with Bioassessment Data ](2-bioadventure/)    |
-| 02:50 - 03:00 | 🧠 *Brain break!* 🧠                                      |
-| 03:00 - 03:50 | [Make a Map! 🗺️](3-make-maps/)                            |
-| 03:50 - 04:00 | ☕ *Coffee break* ☕                                        |
-| 04:00 - 04:30 | [Tying it Together 🪢](4-tying-it-together/)              |
-| 04:30 - 05:00 | Q & A 🤨📚                                                |
+| 01:30 - 01:45 | [Getting Started](getting_started)                        |
+| 01:45 - 02:20 | [Data Wrangling & Project Workflow](1-data-wrangling/)    |
+| 02:20 - 02:30 | ☕ *Take a break* ☕                                        |
+| 02:30 - 03:20 | [Adventures with Bioassessment Data ](2-bioadventure/)    |
+| 03:20 - 03:30 | 🧠 *Brain break!* 🧠                                      |
+| 03:30 - 04:20 | [Make a Map! 🗺️](3-make-maps/)                            |
+| 04:20 - 04:30 | ☕ *Coffee break* ☕                                        |
+| 04:30 - 04:45 | [Tying it Together 🪢](4-tying-it-together/)              |
+| 04:45 - 05:00 | Q & A 🤨📚                                                |
 
 
 ## Instructor
