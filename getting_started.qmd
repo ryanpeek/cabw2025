@@ -34,6 +34,14 @@ pkg_list <- c(
 install.packages(pkg_list)
 ```
 
+## Live Code!
+
+One way to make it less stressful is to always know whatever code we run/type will be available even after it disappears from the screen. We use a [**live code**](https://dl.dropbox.com/scl/fi/jvr4j9f5kszdswhr7xv5q/r_live_code.R?rlkey=94p4shtjlrssfiibc3vydj9en&dl=0) approach based on a shared script. Simply click on the [link](https://dl.dropbox.com/scl/fi/jvr4j9f5kszdswhr7xv5q/r_live_code.R?rlkey=94p4shtjlrssfiibc3vydj9en&dl=0) and refresh your browser (usually `Ctrl + R` or `Cmd + R`). You can then copy and save this code for your use as needed without worrying about missing something.
+
+```{=html}
+<iframe width="780" height="500" src="https://dl.dropbox.com/scl/fi/jvr4j9f5kszdswhr7xv5q/r_live_code.R?rlkey=94p4shtjlrssfiibc3vydj9en&dl=0" title="Live Code"></iframe>
+```
+
 ## Getting Started!
 
 [View slides in full screen](slides_getting_started.html)
